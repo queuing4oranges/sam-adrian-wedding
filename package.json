@@ -12,8 +12,10 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
+    "reactstrap": "^9.2.3",
     "sass": "^1.83.1"
   },
   "devDependencies": {
