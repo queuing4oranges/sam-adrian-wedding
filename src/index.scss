@@ -1,0 +1,38 @@
+:root {
+	height: 100%;
+	color-scheme: light dark;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, :root, #root {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	--bs-body-font-family: "Quicksand", serif, Arial, sans-serif;
+	--bs-body-font-size: 22px;
+	--bs-body-line-height: 1.6;
+	--bs-body-font-weight: 600;
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Libre Baskerville", serif, Arial, sans-serif;
+	}
+}
+
+body {
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+}
