@@ -14,6 +14,10 @@
 		font-weight: 700;
 		font-size: 30px;
 		font-family: vars.$accent-font !important;
+		
+		&:hover {
+			border: vars.$turq-dark 4px solid;
+		}
 	}
 }
 

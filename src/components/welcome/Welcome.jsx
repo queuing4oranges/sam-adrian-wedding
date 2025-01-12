@@ -5,7 +5,7 @@ import './welcome.scss';
 export default function Welcome() {
 
 	return (
-		<Container fluid className='welcome-container w-100 h-100 px-0'>
+		<Container fluid id='welcome' className='welcome-container w-100 h-100 px-0 positin-fixed'>
 			<Row className='pt-5 w-75 mx-auto'>
 				<span className='sam-adrian text-center'>Sam & Adrian</span>
 			</Row>
@@ -18,7 +18,7 @@ export default function Welcome() {
 			</Row>
 			<Row className='w-50 mx-auto'>
 				<span className='text-center'>
-					<button className='rsvp-btn' color='info'>RSVP</button>
+					<button className='rsvp-btn' title="Let's go!">RSVP</button>
 				</span>
 			</Row>
 		</Container>

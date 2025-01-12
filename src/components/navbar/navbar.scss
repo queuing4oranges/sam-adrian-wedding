@@ -1,0 +1,16 @@
+@use '../../../src/variables.scss' as vars;
+
+.navbar-container {
+	& .nav-link {
+		color: vars.$turq-dark;
+
+		&:hover {
+			color: vars.$primary-bg;
+			cursor: pointer;
+		}
+		
+		&:active, &:focus {
+			color: vars.$primary-bg;
+		}
+	}
+}
