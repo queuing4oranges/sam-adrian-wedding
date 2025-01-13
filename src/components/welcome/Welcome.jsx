@@ -5,7 +5,7 @@ import './welcome.scss';
 export default function Welcome() {
 
 	return (
-		<Container fluid id='welcome' className='welcome-container w-100 h-100 px-0 positin-fixed'>
+		<Container fluid id='welcome' className='welcome-container w-100 h-100 px-0 position-relative'>
 			<Row className='pt-5 w-75 mx-auto'>
 				<span className='sam-adrian text-center'>Sam & Adrian</span>
 			</Row>

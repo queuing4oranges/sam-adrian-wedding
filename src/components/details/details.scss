@@ -1,0 +1,18 @@
+@use '../../../src/variables.scss' as vars;
+
+.details-container {
+	background-color: vars.$primary-bg;
+	
+	& h1 {
+		font-size: 4rem;
+	}
+	
+	& p {
+		font-size: 1.5rem;
+	}
+	
+	// .awssld__content > img {
+	// 	width: 300px;
+	// 	height: 300px;
+	// }
+}

@@ -32,7 +32,7 @@ export default function NavbarContainer() {
 	return (
 		<>
 			{showMobileMenu ? (
-				// <MobileNavbar />
+				// TODO <MobileNavbar />
 				null
 			) : (
 				<Container fluid className='navbar-container'>
