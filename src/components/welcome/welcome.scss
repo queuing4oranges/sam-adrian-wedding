@@ -2,17 +2,19 @@
 
 .welcome-container {
 	width: 100%;
+	color: vars.$turq-dark-dark;
 
 	.rsvp-btn{
 		margin-top: 5rem;
 		padding: 1rem;
 		width: 20rem;
 		border-radius: 3rem;
-		background-color: vars.$primary-bg;
+		background-color: vars.$secondary-bg;
 		border: none;
 		font-weight: 700;
 		font-size: 30px;
 		font-family: vars.$accent-font !important;
+		color: vars.$turq-dark-dark;
 		
 		&:hover {
 			border: vars.$turq-dark 4px solid;

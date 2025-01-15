@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import './countdowntimer.scss';
+
 export default function CountdownTimer({ targetDate }) {
 	const [timeLeft, setTimeLeft] = useState(null);
 
@@ -41,16 +43,16 @@ export default function CountdownTimer({ targetDate }) {
 	}
 	
 	return (
-		<div className='d-flex justify-content-between'>
+		<div className='d-flex align-items-end justify-content-between countdown-container'>
 			{timeLeft &&
 				<>
-					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1>
+					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1><h4 className='ms-2'>days</h4>
 					<h1>:</h1>
-					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1>
+					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1><h4 className='ms-2'>hours</h4>
 					<h1>:</h1>
-					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1>
+					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1><h4 className='ms-2'>minutes</h4>
 					<h1>:</h1>
-					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1>
+					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1><h4 className='ms-2'>seconds</h4>
 				</>
 			}
 		</div>

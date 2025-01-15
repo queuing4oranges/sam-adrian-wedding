@@ -1,18 +1,29 @@
 @use '../../../src/variables.scss' as vars;
 
 .details-container {
-	background-color: vars.$primary-bg;
+	background-image: url('../../assets/svgs/details-bg1.svg');
+	color: vars.$turq-dark-dark;
+
+	& .round-column {
+		width: 40rem;
+		height: 40rem;
+		border-radius: 50%;
+		background-color: vars.$yellow;
+		-webkit-box-shadow: 10px 10px 16px -8px rgba(43,129,128,0.72);
+		-moz-box-shadow: 10px 10px 16px -8px rgba(43,129,128,0.72);
+		box-shadow: 10px 10px 16px -8px rgba(43,129,128,0.72);
+	}
 	
 	& h1 {
 		font-size: 4rem;
+		color: vars.$turq-dark-dark;
 	}
 	
 	& p {
 		font-size: 1.5rem;
 	}
 	
-	// .awssld__content > img {
-	// 	width: 300px;
-	// 	height: 300px;
-	// }
+	& .bi-airplane::before{
+		transform: rotate(45deg);
+	}
 }
