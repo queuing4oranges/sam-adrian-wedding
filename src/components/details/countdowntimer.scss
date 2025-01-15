@@ -1,5 +1,8 @@
+@use '../../../src/variables.scss' as vars;
+
 .countdown-container {
 	& h1 {
 		font-family: "Roboto Mono", serif, Arial, sans-serif;
+		color: vars.$yellow;
 	}
 }
