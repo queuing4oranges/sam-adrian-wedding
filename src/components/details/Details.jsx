@@ -7,10 +7,12 @@ import 'swiper/css/autoplay';
 
 import { Container, Row } from 'reactstrap';
 
-import './details.scss';
 import CountdownTimer from './CountdownTimer';
 
+import './details.scss';
+
 export default function Details() {
+	// Target date and time for the countdown timer component
 	const targetDate = '2025-09-08T00:01:00';
 
 	// Images for slider component
