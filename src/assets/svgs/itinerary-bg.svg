@@ -1,1 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1200" viewBox="0 0 502.708 317.5"><path d="M0 0h502.708v317.5H0z" style="fill:#fc712b;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="79.375" cy="90.783" r="88.269" style="fill:#fecd5a;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="52.917" cy="105.833" r="88.269" style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="52.917" cy="105.833" r="88.269" style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="141.186" cy="238.125" r="88.269" style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="282.148" cy="123.398" r="88.269" style="fill:#fecd5a;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="264.583" cy="132.292" r="88.269" style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="176.314" cy="220.561" r="88.269" style="fill:#fecd5a;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/><circle cx="141.186" cy="238.125" r="88.269" style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:.264583"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1900"
+   height="1200"
+   viewBox="0 0 502.70831 317.49999"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <g
+       id="g9">
+      <rect
+         style="fill:#fc712b;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="rect3"
+         width="502.70831"
+         height="317.49997"
+         x="0"
+         y="0" />
+      <circle
+         style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle9"
+         cx="79.375"
+         cy="90.782669"
+         r="88.268944" />
+      <circle
+         style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="path3"
+         cx="52.916664"
+         cy="105.83333"
+         r="88.268944" />
+      <circle
+         style="fill:#07b1bc;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle3"
+         cx="52.916664"
+         cy="105.83333"
+         r="88.268944" />
+      <circle
+         style="fill:#07b1bc;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle4"
+         cx="141.18561"
+         cy="238.12498"
+         r="88.268944" />
+      <circle
+         style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle7"
+         cx="282.14771"
+         cy="123.39771"
+         r="88.268944" />
+      <circle
+         style="fill:#07b1bc;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle5"
+         cx="264.58331"
+         cy="132.29166"
+         r="88.268944" />
+      <circle
+         style="fill:#2b8180;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle8"
+         cx="164.5817"
+         cy="231.21986"
+         r="88.268944" />
+      <circle
+         style="fill:#07b1bc;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
+         id="circle6"
+         cx="141.18561"
+         cy="238.12498"
+         r="88.268944" />
+    </g>
+  </g>
+</svg>
