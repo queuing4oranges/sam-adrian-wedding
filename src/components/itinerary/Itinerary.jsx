@@ -20,9 +20,17 @@ export default function Itinerary() {
 			className='iti-container w-100 h-100 p-5 d-flex align-items-center justify-content-center'
 		>
 			{showMore ?
-				<SingleDayInfo setShowMore={setShowMore} schedule={schedule} selectedDay={selectedDay} />
+				<SingleDayInfo
+					setShowMore={setShowMore}
+					schedule={schedule}
+					selectedDay={selectedDay}
+				/>
 			:
-				<ScheduleInfo setShowMore={setShowMore} schedule={schedule} setSelectedDay={setSelectedDay} />
+				<ScheduleInfo
+					setShowMore={setShowMore}
+					schedule={schedule}
+					setSelectedDay={setSelectedDay}
+				/>
 			}
 		</Container>
 	)

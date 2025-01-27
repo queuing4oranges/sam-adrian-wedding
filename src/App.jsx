@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import Welcome from './components/welcome/Welcome';
 import Details from './components/details/Details';
 import Itinerary from './components/itinerary/Itinerary';
+import Faq from './components/faq/Faq';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 			<Welcome />
 			<Details />
 			<Itinerary />
+			<Faq />
 		</>
 	)
 }
