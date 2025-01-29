@@ -1,0 +1,18 @@
+@use '../../../src/variables.scss' as vars;
+
+.travel-container {
+	.round-title {
+		border: green 2px solid;
+		height: 10rem;
+		width: 10rem;
+		border-radius: 50%;
+	}
+
+	.prague-info-card {
+		border: 2px solid green;
+	}
+
+	.cottage-info-card {
+		border: 2px solid red;
+	}
+}
