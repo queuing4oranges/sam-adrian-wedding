@@ -5,7 +5,7 @@ import {
 } from 'reactstrap'
 
 import Xicon from '../../assets/svgs/Xicon.jsx';
-
+//TODO make one stylesheet for the whole folder
 
 export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
 	const { day, date, title, description, note, imageUrl, inspirationUrl } = schedule[selectedDay - 1];
@@ -42,7 +42,7 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
 			</Modal>
 			<span
 				onClick={() => setShowMore(false)}
-				className='d-flex justify-content-end'
+				className='close-x d-flex justify-content-end pe-0'
 				title='Close'
 			>
 				<Xicon 

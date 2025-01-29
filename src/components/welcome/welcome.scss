@@ -4,21 +4,26 @@
 	width: 100%;
 	color: vars.$turq-dark-dark;
 
-	.rsvp-btn{
+	.rsvp-btn {
+		width: 16rem;
 		margin-top: 5rem;
-		padding: 1rem;
-		width: 20rem;
-		border-radius: 3rem;
+		font-size: 1.5rem;
+		color: vars.$turq-dark-dark;
+		text-transform: uppercase;
+		padding: 10px 20px;
+		border-radius: 10px;
+		border: 2px solid vars.$turq-light-light;
 		background-color: vars.$secondary-bg;
-		border: none;
+		box-shadow: 3px 3px vars.$turq-dark;
+		cursor: pointer;
+		margin: 35px 0;
 		font-weight: 700;
 		font-size: 30px;
-		font-family: vars.$accent-font !important;
-		color: vars.$turq-dark-dark;
+	}
 		
-		&:hover {
-			border: vars.$turq-dark 4px solid;
-		}
+	.rsvp-btn:active {
+		box-shadow: none;
+		transform: translate(3px, 3px);
 	}
 }
 

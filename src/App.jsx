@@ -5,6 +5,7 @@ import Welcome from './components/welcome/Welcome';
 import Details from './components/details/Details';
 import Itinerary from './components/itinerary/Itinerary';
 import Faq from './components/faq/Faq';
+import Travel from './components/travel/Travel';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 			<Welcome />
 			<Details />
 			<Itinerary />
+			<Travel />
 			<Faq />
 		</>
 	)
