@@ -36,7 +36,7 @@ return (
 					<li>Use our RSVP Form</li>
 				</ul>
 				<span>
-					<i className='bi bi-hand-index rotate-90 mx-4' />
+					<i className='bi bi-heart-arrow ms-5 me-2'/>
 					<Button>RSVP</Button>
 				</span>
 			</AccordionBody>

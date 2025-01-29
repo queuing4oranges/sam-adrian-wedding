@@ -2,8 +2,25 @@
 
 .faq-container {
 	background-image: url('../../assets/svgs/faq-bg.svg');
-	
+
 	h1 {
 		color: vars.$turq-dark-dark;
+	}
+
+	.accordion-button:not(.collapsed) {
+		color: vars.$turq-dark-dark;
+		background-color: vars.$yellow;
+		box-shadow: none;
+	}
+
+	.accordion-button.collapsed {
+		color: vars.$turq-dark;
+		background-color: vars.$yellow;
+		box-shadow: none;
+	}
+
+	.accordion-body {
+		color: vars.$turq-dark-dark;
+		background-image: url('../../assets/svgs/collapse-bg.svg');
 	}
 }
