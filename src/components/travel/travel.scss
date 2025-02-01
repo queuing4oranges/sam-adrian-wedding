@@ -2,17 +2,33 @@
 
 .travel-container {
 	.round-title {
-		border: green 2px solid;
-		height: 10rem;
-		width: 10rem;
+		border: none;
+		height: 8rem;
+		width: 8rem;
 		border-radius: 50%;
+
+		&:hover {
+			background-color: vars.$yellow;
+		}
+
+		&.active-btn {
+			background-color: vars.$yellow;
+		}
 	}
 
-	.prague-info-card {
-		border: 2px solid green;
+	.prague-hoods {
+		color: vars.$turq-dark-dark;
+		font-weight: bolder;
+		cursor: pointer;
+		transition: transform 0.2s ease, color 0.2s ease;
+
+		&:hover {
+			transform: scale(1.2);
+			color: vars.$turq-dark;
+		}
 	}
 
-	.cottage-info-card {
-		border: 2px solid red;
+	.swiper-slide {
+		height: auto; // Make all cards same height, regardless of content
 	}
 }
