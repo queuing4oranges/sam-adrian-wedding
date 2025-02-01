@@ -6,9 +6,10 @@ import TravelPrague from './TravelPrague';
 import TravelCottage from './TravelCottage';
 
 export default function Travel() {
-	const [showPrague, setShowPrague] = useState(false);
+	const [showPrague, setShowPrague] = useState(true); // Show Prague as default on first render
 	const [showCottage, setShowCottage] = useState(false);
 	const [showHoods, setShowHoods] = useState(false);
+	const [showMhd, setShowMhd] = useState(false);
 
 	return (
 		<Container
@@ -24,9 +25,10 @@ export default function Travel() {
 					<button
 						className={`round-title d-flex justify-content-center align-items-center mb-2 ${showPrague ? 'active-btn' : 'inactive-btn'}`}
 						onClick={() => {
-							setShowCottage(false);
+							setShowCottage(false); //TODO make this a function!
 							setShowPrague(true);
 							setShowHoods(false);
+							setShowMhd(false);
 						}}
 					>
 						<h3>Prague</h3>
@@ -37,15 +39,20 @@ export default function Travel() {
 							setShowPrague(false);
 							setShowCottage(true);
 							setShowHoods(false);
+							setShowMhd(false);
 						}}
 					>
 						<h3>Cottage</h3>
 					</button>
 				</Col>
 				<Col md='11'>
-				{/* TODO show prague as default */}
 					{showPrague
-						? <TravelPrague showHoods={showHoods} setShowHoods={setShowHoods} />
+						? <TravelPrague
+							showHoods={showHoods}
+							setShowHoods={setShowHoods}
+							showMhd={showMhd}
+							setShowMhd={setShowMhd}
+						/>
 						: showCottage
 							? <TravelCottage />
 							: null

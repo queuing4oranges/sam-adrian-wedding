@@ -37,8 +37,8 @@ export default function Neighborhoods() {
 								<h3 className='mb-4'>{map?.hood}</h3>
 								<p className='flex-grow-1'>{map?.info}</p>
 								<div className='mt-auto'>
-									<p>{map?.highlights && `Highlights: ${map?.highlights}`}</p>
 									<p>{map?.note && `Note: ${map?.note}`}</p>
+									<p>{map?.highlights && `Highlights: ${map?.highlights}`}</p>
 								</div>
 							</div>
 							</Card>
