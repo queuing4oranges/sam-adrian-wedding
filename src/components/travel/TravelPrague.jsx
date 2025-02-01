@@ -9,9 +9,9 @@ export default function TravelPrague({ showHoods, setShowHoods, showMhd, setShow
 	return (
 		<Card className='prague-info-card'>
 			{showHoods 
-				? <Neighborhoods />
+				? <Neighborhoods setShowHoods={setShowHoods} />
 				: showMhd
-					? <PublicTransport />
+					? <PublicTransport setShowMhd={setShowMhd} />
 					: <CardBody>
 						<h3>Travel in Prague</h3>
 						<Row>
@@ -32,7 +32,7 @@ export default function TravelPrague({ showHoods, setShowHoods, showMhd, setShow
 								</div>
 								<div className='p-5'>
 									<button className='hood-btn me-3' onClick={() => setShowHoods(true)} role='button'>
-										Check out the neighboorhoods!
+										Check out the neighboorhoods
 									</button>
 									<button className='hood-btn ms-3' onClick={() => setShowMhd(true)} role='button'>
 										Public Transport

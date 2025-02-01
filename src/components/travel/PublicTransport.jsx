@@ -1,9 +1,25 @@
 import { CardBody, Row, Col } from 'reactstrap';
 
-export default function PublicTransport() {
+import Xicon from '../../assets/svgs/Xicon';
+
+export default function PublicTransport({ setShowMhd }) {
 	return (
-		<CardBody className='p-5'>
-			<h3 className='mb-5'>Prague Public Transport</h3>
+		<CardBody>
+			<div className='d-flex justify-content-between'>
+				<h3 className='mb-5'>Prague Public Transport</h3>
+				<span
+					onClick={() => setShowMhd(false)}
+					className='close-x d-flex justify-content-end pe-0'
+					title='Close'
+				>
+					<Xicon
+						width={30}
+						height={30}
+						color='#164443'
+						className='xicon'
+					/>
+				</span>
+			</div>
 			<Row>
 				<Col md='8' className='p-3'>
 					<p>Prague&apos;s public transport is fairly simple. There are buses, trams and the metro. If you spend the day sightseeing, it is recommended to buy a 24h ticket as it covers the whole city and all means of public transport listed below.</p>
@@ -15,7 +31,7 @@ export default function PublicTransport() {
 						</li>
 						<li>
 							<span className='d-flex align-items-center'><i className='bi bi-train-lightrail-front me-2' /><h4 className='mb-0 mt-1'>Trams</h4></span>
-							<p>Trams are reliable transport. The 22 will take you through the whole city up to the castle and along many tourist attractions of Prague.If you buy a ticket inside of the tram, you do not need to validate it again and it will be valid for all other means of transport.</p>
+							<p>The 22 will take you through the whole city up to the castle and along many tourist attractions of Prague.If you buy a ticket inside of the tram, you do not need to validate it again and it will be valid for all other means of transport.</p>
 						</li>
 						<li>
 							<span className='d-flex align-items-center'><i className='bi bi-bus-front me-2' /><h4 className='mb-0 mt-1'>Buses</h4></span>
@@ -25,7 +41,7 @@ export default function PublicTransport() {
 					<p>Ticket prices are very affordable. Day tickets (24 hours) are around $5. For further information, have a look at <a href='https://pid.cz/en/' target='_blank'>www.pid.cz</a></p>
 				</Col>
 				<Col md='4' className='p-3'>
-					<p className='fw-bolder'>Using Uber...</p>
+					<p className='fw-bolder'><i className='bi bi-taxi-front me-2' />Using Uber...</p>
 					<p>
 						Uber operates in Prague and is a convenient option, especially for getting from the airport to the city center. A ride from Václav Havel Airport (PRG) to the center costs around CZK 500–800 ($20–35), depending on traffic and demand. At the airport, head to the &quot;Ride-Share Pickup&quot; area outside the terminal (usually near Parking P1/P2). Bolt is another popular ride-sharing app in Prague, often slightly cheaper. If you prefer a budget-friendly option, the Airport Express bus or Bus 119 + Metro can get you to the center for about CZK 40 ($1.50).
 					</p>

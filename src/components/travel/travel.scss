@@ -73,6 +73,13 @@
 	opacity: 0.6;
 }
 
+.accommodation-image {
+	transition: transform 0.3s ease-in-out;
+	&:hover {
+		transform: scale(1.5);
+	}
+}
+
 @media (min-width: 768px) {
 	.hood-btn {
 		padding: 16px 32px;

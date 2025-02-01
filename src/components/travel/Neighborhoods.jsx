@@ -6,11 +6,26 @@ import 'swiper/css/pagination';
 import { CardBody, Card } from 'reactstrap';
 
 import { mapData } from './mapData';
+import Xicon from '../../assets/svgs/Xicon';
 
-export default function Neighborhoods() {
+export default function Neighborhoods({ setShowHoods }) {
 	return (
-		<CardBody className='p-5'>
-			<h3 className='mb-5'>Get to know the neighborhoods</h3>
+		<CardBody>
+			<div className='d-flex justify-content-between'>
+				<h3 className='mb-5'>Get to know the neighborhoods</h3>
+				<span
+					onClick={() => setShowHoods(false)}
+					className='close-x d-flex justify-content-end pe-0'
+					title='Close'
+				>
+					<Xicon
+						width={30}
+						height={30}
+						color='#164443'
+						className='xicon'
+					/>
+				</span>
+			</div>
 			<div className='position-relative'>
 				<Swiper
 					modules={[Pagination, Navigation]}
