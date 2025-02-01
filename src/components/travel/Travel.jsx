@@ -6,11 +6,22 @@ import TravelPrague from './TravelPrague';
 import TravelCottage from './TravelCottage';
 
 export default function Travel() {
-	const [showPrague, setShowPrague] = useState(true); // Show Prague as default on first render
-	const [showCottage, setShowCottage] = useState(false);
+	const [activeSection, setActiveSection] = useState('showPrague'); // Show Prague as default on first render
 	const [showHoods, setShowHoods] = useState(false);
 	const [showMhd, setShowMhd] = useState(false);
 
+	// Define array of buttons with labels and associated state keys
+	const buttons = [
+		{ label: 'Prague', state: 'showPrague'},
+		{ label: 'Cottage', state: 'showCottage'}
+	]
+
+	// Function to handle button
+	const handleClick = (stateKey) => {
+		setActiveSection(stateKey);
+		setShowHoods(false);
+		setShowMhd(false);
+	}
 	return (
 		<Container
 			fluid
@@ -22,38 +33,25 @@ export default function Travel() {
 			</Row>
 			<Row className='h-100 pt-5'>
 				<Col md='1' className='d-flex flex-column justify-content-start align-items-center h-100'>
-					<button
-						className={`round-title d-flex justify-content-center align-items-center mb-2 ${showPrague ? 'active-btn' : 'inactive-btn'}`}
-						onClick={() => {
-							setShowCottage(false); //TODO make this a function!
-							setShowPrague(true);
-							setShowHoods(false);
-							setShowMhd(false);
-						}}
-					>
-						<h3>Prague</h3>
-					</button>
-					<button
-						className={`round-title d-flex justify-content-center align-items-center mt-2 ${showCottage ? 'active-btn' : 'inactive-btn'}`}
-						onClick={() => {
-							setShowPrague(false);
-							setShowCottage(true);
-							setShowHoods(false);
-							setShowMhd(false);
-						}}
-					>
-						<h3>Cottage</h3>
-					</button>
+					{buttons.map(({label, state}) => (
+						<button
+							key={state}
+							className={`round-title d-flex justify-content-center align-items-center my-2 ${ (activeSection === state) ? "active-btn" : "inactive-btn"}`}
+							onClick={() => {handleClick(state)}}
+						>
+							<h3>{label}</h3>
+						</button>
+					))}
 				</Col>
 				<Col md='11'>
-					{showPrague
+					{(activeSection === 'showPrague')
 						? <TravelPrague
 							showHoods={showHoods}
 							setShowHoods={setShowHoods}
 							showMhd={showMhd}
 							setShowMhd={setShowMhd}
 						/>
-						: showCottage
+						: (activeSection === 'showCottage')
 							? <TravelCottage />
 							: null
 					}
