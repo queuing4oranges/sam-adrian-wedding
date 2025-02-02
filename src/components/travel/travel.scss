@@ -2,11 +2,12 @@
 
 .travel-container {
 	.round-title {
-		border: none;
+		border: 1px solid #2B8180;
+		color: #164443;
+		background-color: white;
 		height: 8rem;
 		width: 8rem;
 		border-radius: 50%;
-		background-color: rgb(245, 241, 241);
 
 		&:hover {
 			background-color: vars.$turq-light-light;
@@ -36,6 +37,7 @@
 
 .hood-btn {
 	font-size: smaller;
+	color: #164443;
 	background-color: transparent;
 	border: 1px solid vars.$turq-dark;
 	position: relative;

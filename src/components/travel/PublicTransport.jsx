@@ -31,7 +31,7 @@ export default function PublicTransport({ setShowMhd }) {
 						</li>
 						<li>
 							<span className='d-flex align-items-center'><i className='bi bi-train-lightrail-front me-2' /><h4 className='mb-0 mt-1'>Trams</h4></span>
-							<p>The 22 will take you through the whole city up to the castle and along many tourist attractions of Prague.If you buy a ticket inside of the tram, you do not need to validate it again and it will be valid for all other means of transport.</p>
+							<p>The 22 will take you through the whole city up to the castle and along many tourist attractions of Prague. If you buy a ticket inside of the tram, you do not need to validate it again and it will be valid for all other means of public transport.</p>
 						</li>
 						<li>
 							<span className='d-flex align-items-center'><i className='bi bi-bus-front me-2' /><h4 className='mb-0 mt-1'>Buses</h4></span>

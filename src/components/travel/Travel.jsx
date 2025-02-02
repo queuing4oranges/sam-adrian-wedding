@@ -40,7 +40,7 @@ export default function Travel() {
 							className={`round-title d-flex justify-content-center align-items-center my-2 ${ (activeSection === state) ? 'active-btn' : 'inactive-btn'}`}
 							onClick={() => {handleClick(state)}}
 						>
-							<h3>{label}</h3>
+							<p className='m-0 fw-bolder'>{label}</p>
 						</button>
 					))}
 				</Col>
