@@ -27,7 +27,7 @@ export default function PublicTransport({ setShowMhd }) {
 						<li>
 							<span className='d-flex align-items-center'><i className='bi bi-train-front me-2' /><h4 className='mb-0 mt-1'>Metro</h4></span>
 							<p>There are three lines: Line A (green), Line B (yellow), Line C (red). The interval is around 2-4 minutes and 10 min in the evening/night. Tickets can be bought online, at a ticket terminal or the shops in the metro stations.</p>
-							<p className='fw-bolder'>If you start your journey with the Metro, you need to buy and/or validate your ticket, before using the escalators.</p>
+							<p className='fw-bolder'>If you start your journey with the Metro, you need to buy and/or validate your ticket, before entering the platform (using the escalators).</p>
 						</li>
 						<li>
 							<span className='d-flex align-items-center'><i className='bi bi-train-lightrail-front me-2' /><h4 className='mb-0 mt-1'>Trams</h4></span>

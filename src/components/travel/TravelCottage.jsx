@@ -15,19 +15,13 @@ export default function TravelCottage() {
 				<h3>Accommodation in the Cottage</h3>
 				<Row>
 					<Col md='4' className='p-3'>
-						<p className='mb-2'>Important note</p>
-							<ul>
-								<li>
-									we will require people to pay their accom for the cottage (price TBA but expect XYZ for nights 9,10,11 of sept)
-								</li>
-								<li>
-									food wise, while at the cottage, we will cover breakfast, lunch, dinner, alcoholic and non alc drinks.
-								</li>
-								<li>
-									few pics of the cottage (rooms, garden, living area) of rooms and beds inside so mentally ppl can prepare to be grouped. Most likely 3-4 people per room. Choose your bed upon arrival.
-								</li>
-							</ul>
-
+						<p className='mb-2'>Important note:</p>
+						<p>
+							Guests staying at the cottage will be required to cover the cost of accommodation. There are 8 shared rooms, each hosting 3-4 people. Beds can be chosen upon arrival. The total cost is CZK 3,400 ($145) per person, to be paid by August 10th at the latest.
+						</p>
+						<p>
+							As for meals, we&apos;ve got you covered! During your stay at the cottage, we&apos;ll provide breakfast, lunch, dinner, as well as alcoholic and non-alcoholic drinks.
+						</p>
 					</Col>
 					<Col md='8' className='p-3'>
 						<div className='row row-cols-3 g-3 p-3'>

@@ -22,6 +22,7 @@ export default function Travel() {
 		setShowHoods(false);
 		setShowMhd(false);
 	}
+
 	return (
 		<Container
 			fluid
@@ -36,7 +37,7 @@ export default function Travel() {
 					{buttons.map(({label, state}) => (
 						<button
 							key={state}
-							className={`round-title d-flex justify-content-center align-items-center my-2 ${ (activeSection === state) ? "active-btn" : "inactive-btn"}`}
+							className={`round-title d-flex justify-content-center align-items-center my-2 ${ (activeSection === state) ? 'active-btn' : 'inactive-btn'}`}
 							onClick={() => {handleClick(state)}}
 						>
 							<h3>{label}</h3>
@@ -58,5 +59,5 @@ export default function Travel() {
 				</Col>
 			</Row>
 		</Container>
-	)
+	);
 }
