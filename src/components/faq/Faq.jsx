@@ -6,7 +6,6 @@ import LayingDoodle from '../../assets/svgs/LayingDoodle';
 import './faq.scss';
 
 export default function faq() {
-	const rainbowColors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
 
 	return (
 		<Container
@@ -66,31 +65,13 @@ export default function faq() {
 						</Col>
 					</Row>
 					<div className='d-flex justify-content-center pb-5'>
-						{/* Flickering chevrons */}
 						<div className='d-flex align-items-center gap-1 chevron-container'>
-							{rainbowColors.map((color, idx) => (
-								<span key={idx} className='pe-2'>
-									<i
-										className='bi bi-chevron-right chevron'
-										style={{ color, animationDelay: `${idx * 0.1}s` }}
-									/>
-								</span>
-							))}
-
 							<button className='rsvp-btn'>
 								<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none'>
 									<i className='bi bi-chevron-double-right me-2' />
 									RSVP
 								</a>
 							</button>
-							{rainbowColors.map((color, idx) => (
-								<span key={idx} className='ps-2'>
-									<i
-										className='bi bi-chevron-left chevron'
-										style={{ color, animationDelay: `${idx * 0.1}s` }}
-									/>
-								</span>
-							))}
 						</div>
 					</div>
 				</Card>
