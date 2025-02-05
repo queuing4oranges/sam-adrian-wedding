@@ -31,10 +31,10 @@ export default function TravelPrague({ showHoods, setShowHoods, showMhd, setShow
 									<img src={map} alt='Map of Prague' style={{ width: "38rem"}} />
 								</div>
 								<div className='p-5'>
-									<button className='hood-btn me-3' onClick={() => setShowHoods(true)} role='button'>
+									<button className='hood-btn mx-3' onClick={() => setShowHoods(true)} role='button'>
 										Check out the neighboorhoods
 									</button>
-									<button className='hood-btn ms-3' onClick={() => setShowMhd(true)} role='button'>
+									<button className='hood-btn mx-3' onClick={() => setShowMhd(true)} role='button'>
 										Public Transport
 									</button>
 								</div>

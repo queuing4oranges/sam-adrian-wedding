@@ -21,4 +21,114 @@
 		color: vars.$turq-dark-dark;
 		background-image: url('../../assets/svgs/collapse-bg.svg');
 	}
+
+	.doodle-span {
+		svg {
+			width: 30rem;
+			height: auto;
+			display: flex !important;
+			justify-content: center !important;
+			align-items: center !important;
+		}
+	}
+
+	.rsvp-btn {
+		font-size: 2rem;
+		padding: 13px 20px 13px;
+		border: 1px solid vars.$turq-dark-dark;
+		cursor: pointer;
+		position: relative;
+		background-color: white;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+		z-index: 1;
+
+		a {
+			color: unset;
+		}
+	}
+
+	.rsvp-btn:after {
+		content: '';
+		background-color: vars.$turq-light-light;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		position: absolute;
+		bottom: 7px;
+		left: 7px;
+		transition: 0.2s;
+	}
+
+	.rsvp-btn:hover:after {
+		top: 0px;
+		left: 0px;
+	}
+
+	@media (min-width: 768px) {
+		.rsvp-btn {
+			padding: 13px 50px 13px;
+		}
+	}
+
+	.chevron-container {
+		display: flex;
+	}
+
+	.chevron {
+		font-size: 1.5rem;
+		opacity: 0;
+		animation: flicker 1s infinite alternate;
+	}
+
+	@keyframes flicker {
+		0% { opacity: 0; transform: translateX(0); }
+		50% { opacity: 1; transform: translateX(-5px); }
+		100% { opacity: 0; transform: translateX(-10px); }
+	}
+}
+
+
+.btn-wrapper {
+	.span-container {
+		display: block;
+		width: 200px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 18px;
+		font-family: sans-serif;
+		text-decoration: none;
+		color: vars.$text-font;
+		border: 1px solid black;
+		letter-spacing: 2px;
+		text-align: center;
+		position: relative;
+		transition: all .35s;
+		cursor: pointer;
+	}
+
+	.span-container span {
+		position: relative;
+		z-index: 2;
+	}
+
+	.span-container:after {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		background: vars.$secondary-bg;
+		transition: all .35s;
+	}
+
+	.span-container:hover{
+		color: vars.$text-font;
+	}
+
+	.span-container:hover:after{
+		width: 100%;
+	}
 }
