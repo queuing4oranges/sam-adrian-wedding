@@ -1,4 +1,5 @@
 import './akkordeon.scss';
+import '../../components/button55.scss';
 
 export default function Akkordeon() {
 	return (
@@ -24,7 +25,7 @@ export default function Akkordeon() {
 							Use our RSVP Form
 							<i className='bi bi-arrow-right-short' />
 						</p>
-						<button className='button-55' role='button'>
+						<button className='button-55 faq-rsvp-btn' role='button'>
 							<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none text-dark'>
 								RSVP
 							</a>

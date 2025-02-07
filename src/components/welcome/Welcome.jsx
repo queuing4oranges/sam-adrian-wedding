@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'reactstrap';
 
 import './welcome.scss';
+import '../../components/button55.scss';
 
 export default function Welcome() {
 
@@ -17,8 +18,12 @@ export default function Welcome() {
 				</Col>
 			</Row>
 			<Row className='w-50 mx-auto'>
-				<span className='text-center'>
-					<button className='rsvp-btn' title="Let's go!">RSVP</button>
+				<span className='text-center mt-5'>
+					<button className='button-55 welcome-rsvp-btn' role='button' title='Let&apos;s go!'>
+						<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none text-dark'>
+							RSVP
+						</a>
+					</button>
 				</span>
 			</Row>
 		</Container>

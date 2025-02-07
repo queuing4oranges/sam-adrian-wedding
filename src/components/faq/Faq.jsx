@@ -4,6 +4,7 @@ import Akkordeon from './Akkordeon';
 import LayingDoodle from '../../assets/svgs/LayingDoodle';
 
 import './faq.scss';
+import '../../components/button55.scss';
 
 export default function faq() {
 	const userAgent = navigator.userAgent.toLowerCase(); // Check which device user is using
@@ -96,8 +97,17 @@ export default function faq() {
 							</div>
 						</Col>
 						<Col md='4' className='p-5'>
+						<div className='d-flex justify-content-center pb-5'>
+							<div className='d-flex align-items-center'>
+								<button className='button-55 rsvp-btn' role='button'>
+									<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none text-dark'>
+										RSVP
+									</a>
+								</button>
+							</div>
+							</div>
 							<p>
-								Please RSVP by <strong>August, 10 </strong>to help us finalize arrangements. <br /> Incase you missed it above here, again, the RSVP form:
+								Please RSVP by <strong>August, 10 </strong>to help us finalize arrangements. <br /> Incase you missed it above here, again, the RSVP form.
 							</p>
 						</Col>
 						<Col md='4' className='p-5 text-end'>
@@ -118,16 +128,6 @@ export default function faq() {
 							</div>
 						</Col>
 					</Row>
-					<div className='d-flex justify-content-center pb-5'>
-						<div className='d-flex align-items-center'>
-							<button className='rsvp-btn'>
-								<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none'>
-									<i className='bi bi-chevron-double-right me-2' />
-									RSVP
-								</a>
-							</button>
-						</div>
-					</div>
 				</Card>
 			</Row>
 		</Container>

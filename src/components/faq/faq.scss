@@ -5,23 +5,6 @@
 		color: vars.$turq-dark-dark;
 	}
 
-	.accordion-button:not(.collapsed) {
-		color: vars.$turq-dark-dark;
-		background-color: vars.$yellow;
-		box-shadow: none;
-	}
-
-	.accordion-button.collapsed {
-		color: vars.$turq-dark;
-		background-color: vars.$yellow;
-		box-shadow: none;
-	}
-
-	.accordion-body {
-		color: vars.$turq-dark-dark;
-		background-image: url('../../assets/svgs/collapse-bg.svg');
-	}
-
 	.doodle-span {
 		svg {
 			width: 30rem;
@@ -33,41 +16,12 @@
 	}
 
 	.rsvp-btn {
-		font-size: 2rem;
-		padding: 13px 20px 13px;
-		border: 1px solid vars.$turq-dark-dark;
-		cursor: pointer;
-		position: relative;
-		background-color: white;
-		user-select: none;
-		-webkit-user-select: none;
-		touch-action: manipulation;
-		z-index: 1;
+		font-size: 4rem;
+		padding: 3rem;
+		background-color: vars.$turq-light-light;
+
 		a {
 			color: unset;
-		}
-	}
-
-	.rsvp-btn:after {
-		content: '';
-		background-color: vars.$turq-light-light;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		position: absolute;
-		bottom: 7px;
-		left: 7px;
-		transition: 0.2s;
-	}
-
-	.rsvp-btn:hover:after {
-		top: 0px;
-		left: 0px;
-	}
-
-	@media (min-width: 768px) {
-		.rsvp-btn {
-			padding: 13px 50px 13px;
 		}
 	}
 
