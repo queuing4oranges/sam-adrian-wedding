@@ -1,8 +1,116 @@
 @use '../../../src/variables.scss' as vars;
 
 .countdown-container {
-	& h1 {
+	h1 {
 		font-family: "Roboto Mono", serif, Arial, sans-serif;
-		color: vars.$yellow;
+		color: vars.$secondary-bg !important;
+	}
+
+	.column-col {
+		padding: 0;
+	}
+}
+
+.gradient-border {
+	--border-width: 3px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10rem;
+	padding: 3rem;
+	background: white;
+	border-radius: 10px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		top: calc(-1 * var(--border-width));
+		left: calc(-1 * var(--border-width));
+		z-index: -1;
+		width: calc(100% + var(--border-width) * 2);
+		height: calc(100% + var(--border-width) * 2);
+		background: linear-gradient(
+			60deg,
+			vars.$primary-bg,
+			vars.$secondary-bg,
+			vars.$yellow,
+			vars.$turq-dark,
+			vars.$turq-light
+		);
+		background-size: 300% 300%;
+		background-position: 0 50%;
+		border-radius: 10px;
+		animation: moveGradient 4s alternate infinite;
+	}
+}
+
+@keyframes moveGradient {
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	.countdown-container {
+		h1 {
+			font-size: 3rem;
+		}
+
+		h4 {
+			font-size: 1.25rem;
+		}
+	}
+
+	.gradient-border {
+		height: 8rem;
+		padding: 2rem;
+	}
+
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	.countdown-container {
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		h4 {
+			font-size: 1rem;
+		}
+	}
+
+	.gradient-border {
+		height: 6rem;
+		padding: 1.5rem;
+	}
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+	.countdown-container {
+		h1 {
+			font-size: 2rem;
+		}
+
+		h4 {
+			font-size: 0.75rem;
+		}
+	}
+
+	.gradient-border {
+		height: 4rem;
+		padding: 1rem;
+	}
+}
+
+/* Extra Small Screens (400px and below) */
+@media (max-width: 400px) {
+	.countdown-container {
+		h1 {
+			font-size: 1rem;
+		}
 	}
 }

@@ -1,20 +1,29 @@
 import { useState, useEffect } from 'react';
-
+import { Row, Col } from 'reactstrap';
 import './countdowntimer.scss';
 
 export default function CountdownTimer({ targetDate }) {
 	const [timeLeft, setTimeLeft] = useState(null);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const newTimeLeft = calculateTimeLeft(targetDate);
 			setTimeLeft(newTimeLeft);
-			
+
 			if (newTimeLeft.total <= 0) {
 				clearInterval(interval); // Stop the countdown when it reaches 0
 			}
 		}, 1000);
-		
+
 		// Cleanup function
 		return () => clearInterval(interval);
 	}, [targetDate])
@@ -23,12 +32,12 @@ export default function CountdownTimer({ targetDate }) {
 	const calculateTimeLeft = (target) => {
 		const now = Date.now();
 		const difference = new Date(target) - now;
-		
+
 		const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 		const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
 		const minutes = Math.floor((difference / (1000 * 60)) % 60);
 		const seconds = Math.floor((difference / 1000) % 60)
-		
+
 		if (difference > 0) {
 			return { total: difference, days, hours, minutes, seconds };
 		} else {
@@ -41,20 +50,58 @@ export default function CountdownTimer({ targetDate }) {
 			}
 		}
 	}
-	
+
 	return (
-		<div className='d-flex align-items-end justify-content-between countdown-container'>
-			{timeLeft &&
-				<>
-					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1><h4 className='ms-2'>days</h4>
-					<h1>:</h1>
-					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1><h4 className='ms-2'>hours</h4>
-					<h1>:</h1>
-					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1><h4 className='ms-2'>minutes</h4>
-					<h1>:</h1>
-					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1><h4 className='ms-2'>seconds</h4>
-				</>
+		<>
+			{isMobile && timeLeft &&
+			<Col className='countdown-container gradient-border'>
+				<Row className='text-center'>
+					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1>
+					<h4>days</h4>
+				</Row>
+				<Row className='text-center'>
+					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1>
+					<h4>hours</h4>
+				</Row>
+				<Row className='text-center'>
+					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1>
+					<h4>minutes</h4>
+				</Row>
+				<Row className='text-center'>
+					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1>
+					<h4>seconds</h4>
+				</Row>
+			</Col>
 			}
-		</div>
-	)
+			{!isMobile && timeLeft &&
+			<Row className='countdown-container gradient-border w-75 m-auto p-2 d-flex align-items-center'>
+				<Col>
+					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1>
+					<h4>days</h4>
+				</Col>
+				<Col>
+					<h1>:</h1>
+				</Col>
+				<Col>
+					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1>
+					<h4>hours</h4>
+				</Col>
+				<Col>
+					<h1>:</h1>
+				</Col>
+				<Col>
+					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1>
+					<h4>minutes</h4>
+				</Col>
+				<Col>
+					<h1>:</h1>
+				</Col>
+				<Col>
+					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1>
+					<h4>seconds</h4>
+				</Col>
+			</Row>
+			}
+		</>
+	);
 }

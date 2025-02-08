@@ -1,0 +1,51 @@
+.cursor {
+	position: relative;
+	width: 24em;
+	margin: 0 auto;
+	border-right: 2px solid rgba(255,255,255,.75);
+	font-size: 30px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);    
+}
+
+.typewriter-animation {
+	animation: 
+	typewriter 5s steps(50) 0s 1 normal both,  /* Typewriter effect */
+	blinkingCursor 500ms steps(50) infinite normal;  /* Blinking cursor */
+	// changeColor 15s 5s infinite alternate;  /* Color change after animation */
+	width: 0%; /* Start with 0 width for typewriter effect */
+}
+
+.typewriter-text {
+	font-size: 4rem !important;
+}
+
+@keyframes typewriter {
+	from {
+		width: 10%;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+@keyframes blinkingCursor {
+	from {
+		border-right-color: rgba(255,255,255,.75);
+	}
+
+	to {
+		border-right-color: transparent;
+	}
+}
+
+// @keyframes changeColor {
+// 	0% { color: #FD9D30; }
+// 	20% { color: #FC712B; }
+// 	40% { color: #FECD5A; }
+// 	60% { color: #07B1BC; }
+// 	80% { color: #2B8180; }
+// 	100% { color: #FD9D30; }
+// }

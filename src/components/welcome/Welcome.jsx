@@ -9,7 +9,7 @@ export default function Welcome() {
 		<Container fluid id='welcome' className='welcome-container w-100 h-100 px-0 position-relative d-flex flex-column align-items-center justify-content-center'>
 			<Row className='pt-5 w-100 d-flex justify-content-center'>
 				<Col xs={12} md={8} className='text-center'>
-					<span className='sam-adrian fw-bold'>Sam & Adrian</span>
+					<span className='sam-adrian d-flex justify-content-center fw-semibold'>Sam & Adrian</span>
 				</Col>
 			</Row>
 			<Row className='w-100 d-flex justify-content-center'>

@@ -1,7 +1,6 @@
 @use '../../../src/variables.scss' as vars;
 
 .details-container {
-	background-image: url('../../assets/svgs/details-bg1.svg');
 	color: vars.$turq-dark-dark;
 
 	& .round-column {
@@ -13,17 +12,67 @@
 		-moz-box-shadow: 10px 10px 16px -8px rgba(43,129,128,0.72);
 		box-shadow: 10px 10px 16px -8px rgba(43,129,128,0.72);
 	}
-	
+
 	& h1 {
 		font-size: 4rem;
 		color: vars.$turq-dark-dark;
 	}
-	
+
 	& p {
 		font-size: 1.5rem;
 	}
-	
-	& .bi-airplane::before{
+
+	& .bi-airplane::before {
 		transform: rotate(45deg);
+	}
+
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	.details-container {
+		white-space: nowrap;
+		h1 {
+			font-size: 3rem;
+		}
+	}
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	.details-container {
+		white-space: nowrap;
+		h1 {
+			font-size: 2rem;
+		}
+	}
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+	.details-container {
+		white-space: nowrap;
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		h4 {
+			font-size: 0.75rem;
+		}
+
+		.gradient-border {
+			height: 4rem;
+			padding: 1rem;
+		}
+	}
+}
+
+/* Extra Small Screens (400px and below) */
+@media (max-width: 400px) {
+	.details-container {
+		white-space: nowrap;
+		h1 {
+			font-size: 1rem;
+		}
 	}
 }

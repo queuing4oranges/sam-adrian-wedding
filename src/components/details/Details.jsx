@@ -7,7 +7,8 @@ import 'swiper/css/autoplay';
 
 import { Container, Row } from 'reactstrap';
 
-import CountdownTimer from './CountdownTimer';
+import CountdownTimer from './CountdownTimer.jsx';
+import AnimatedHeading from './AnimatedHeading.jsx';
 
 import './details.scss';
 
@@ -26,9 +27,14 @@ export default function Details() {
 	];
 
 	return (
-		<Container fluid id='details' className='details-container w-100 h-100 pb-5 px-5'>
-			<Row className='pt-5'>
-				<h1 className='pt-5 px-5 text-center'>Monday, September 8 - Friday, September 12</h1>
+		<Container fluid id='details' className='details-container w-100 h-100 p-5'>
+			<Row className='m-0 p-0'>
+				<AnimatedHeading />
+			</Row>
+			<Row className='d-flex justify-content-center'>
+				<span>
+					<CountdownTimer targetDate={targetDate}/>
+				</span>
 			</Row>
 			<Row className='d-flex align-items-center justify-content-center'>
 				<div className='round-column mt-5 d-flex flex-column align-items-center justify-content-center text-center'>
@@ -40,24 +46,23 @@ export default function Details() {
 					</p>
 				</div>
 				<div className='w-50'>
-						<Swiper
-							modules={[Autoplay]}
-							spaceBetween={20}
-							slidesPerView={3}
-							autoplay={{ delay: 3000 }}
-							loop={true}
-						>
-							{slides.map((slide) => (
-								<SwiperSlide key={slide.id}>
-									<img
-										src={slide.image}
-										style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '3rem' }}
-									/>
-								</SwiperSlide>
-							))}
-						</Swiper>
-					<CountdownTimer targetDate={targetDate}/>
-					</div>
+					<Swiper
+						modules={[Autoplay]}
+						spaceBetween={20}
+						slidesPerView={3}
+						autoplay={{ delay: 3000 }}
+						loop={true}
+					>
+						{slides.map((slide) => (
+							<SwiperSlide key={slide.id}>
+								<img
+									src={slide.image}
+									style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '3rem' }}
+								/>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 			</Row>
 		</Container>
 	)
