@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Row } from 'reactstrap';
 
 import './animatedheading.scss';
 
@@ -7,14 +6,13 @@ export default function AnimatedHeading() {
 	const [animationTriggered, setAnimationTriggered] = useState(false);
 
 	useEffect(() => {
-		const typewriterText = document.querySelector('.typewriter-text');
+		const animatedText = document.querySelector('.details-heading');
 
 		const handleScrollAnimation = (entries, observer) => {
 			entries.forEach(entry => {
 				if(entry.isIntersecting && !animationTriggered) {
 					// Add classes to trigger animation
-					entry.target.classList.add('typewriter-animation');
-					entry.target.classList.add('cursor');
+					entry.target.classList.add('animated-text');
 					setAnimationTriggered(true);
 					observer.unobserve(entry.target); // Stop observing after animation starts
 				}
@@ -27,22 +25,22 @@ export default function AnimatedHeading() {
 			threshold: 0.2 // Trigger when 20% of element is in the view
 		});
 
-		if (typewriterText) {
+		if (animatedText) {
 			// Start observing the target element
-			observer.observe(typewriterText);
+			observer.observe(animatedText);
 		}
 
 		return () =>{
-			if (typewriterText) {
-				observer.unobserve(typewriterText);
+			if (animatedText) {
+				observer.unobserve(animatedText);
 				setAnimationTriggered(false);
 			}
 		}		
 	},[animationTriggered])
 
 	return (
-		<p className='typewriter-text mt-5 fw-bold'>
+		<h1 className='details-heading fw-bold text-center'>
 			Monday, September 8 - Friday, September 12
-		</p>
-	)
+		</h1>
+	);
 }

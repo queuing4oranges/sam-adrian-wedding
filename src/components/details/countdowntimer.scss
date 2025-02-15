@@ -4,10 +4,27 @@
 	h1 {
 		font-family: "Roboto Mono", serif, Arial, sans-serif;
 		color: vars.$secondary-bg !important;
+		max-width: 100%;
 	}
 
 	.column-col {
 		padding: 0;
+	}
+
+	&.animated-countdown {
+		animation: slideInFromRight 3s ease-out;
+		max-width: 100%;
+	}
+}
+
+@keyframes slideInFromRight {
+	from {
+		transform: translateX(500px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
 	}
 }
 
@@ -17,10 +34,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 10rem;
+	min-height: 10rem;
 	padding: 3rem;
 	background: white;
 	border-radius: 10px;
+	flex-wrap: wrap;
 
 	&::after {
 		position: absolute;
@@ -64,7 +82,6 @@
 	}
 
 	.gradient-border {
-		height: 8rem;
 		padding: 2rem;
 	}
 
@@ -75,6 +92,7 @@
 	.countdown-container {
 		h1 {
 			font-size: 2.5rem;
+			flex-wrap: nowrap;
 		}
 
 		h4 {
@@ -83,7 +101,6 @@
 	}
 
 	.gradient-border {
-		height: 6rem;
 		padding: 1.5rem;
 	}
 }
@@ -101,7 +118,6 @@
 	}
 
 	.gradient-border {
-		height: 4rem;
 		padding: 1rem;
 	}
 }

@@ -1,51 +1,57 @@
-.cursor {
-	position: relative;
-	width: 24em;
-	margin: 0 auto;
-	border-right: 2px solid rgba(255,255,255,.75);
-	font-size: 30px;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	transform: translateY(-50%);    
-}
-
-.typewriter-animation {
-	animation: 
-	typewriter 5s steps(50) 0s 1 normal both,  /* Typewriter effect */
-	blinkingCursor 500ms steps(50) infinite normal;  /* Blinking cursor */
-	// changeColor 15s 5s infinite alternate;  /* Color change after animation */
-	width: 0%; /* Start with 0 width for typewriter effect */
-}
-
-.typewriter-text {
+.details-heading {
 	font-size: 4rem !important;
+	margin-top: 2rem !important;
+	margin-bottom: 2rem;
+
+	&.animated-text {
+		animation: slideInFromLeft 1s ease-out;
+		display: inline-block;
+		max-width: 100%;
+	}
 }
 
-@keyframes typewriter {
+@keyframes slideInFromLeft {
 	from {
-		width: 10%;
+		transform: translateX(-500px);
+		opacity: 0;
 	}
-
 	to {
-		width: 100%;
-	}
-}
-@keyframes blinkingCursor {
-	from {
-		border-right-color: rgba(255,255,255,.75);
-	}
-
-	to {
-		border-right-color: transparent;
+		transform: translateX(0);
+		opacity: 1;
 	}
 }
 
-// @keyframes changeColor {
-// 	0% { color: #FD9D30; }
-// 	20% { color: #FC712B; }
-// 	40% { color: #FECD5A; }
-// 	60% { color: #07B1BC; }
-// 	80% { color: #2B8180; }
-// 	100% { color: #FD9D30; }
-// }
+/* Desktops (1200px and below) */
+@media (max-width: 1200px) {
+	.animated-text {
+		font-size: 2.5rem !important;
+	}
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	.animated-text {
+		font-size: 2rem !important;
+	}
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	.animated-text {
+		font-size: 2rem !important;
+	}
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+	.animated-text {
+		font-size: 1.5rem !important;
+	}
+}
+
+/* Extra Small Screens (400px and below) */
+@media (max-width: 400px) {
+	.animated-text {
+		font-size: 1rem !important;
+	}
+}

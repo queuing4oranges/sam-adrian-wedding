@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -28,15 +29,13 @@ export default function Details() {
 
 	return (
 		<Container fluid id='details' className='details-container w-100 h-100 p-5'>
-			<Row className='m-0 p-0'>
+			<Row className='m-0 p-0 text-wrap'>
 				<AnimatedHeading />
 			</Row>
 			<Row className='d-flex justify-content-center'>
-				<span>
-					<CountdownTimer targetDate={targetDate}/>
-				</span>
+				<CountdownTimer targetDate={targetDate}/>
 			</Row>
-			<Row className='d-flex align-items-center justify-content-center'>
+			{/* <Row className='d-flex align-items-center justify-content-center'>
 				<div className='round-column mt-5 d-flex flex-column align-items-center justify-content-center text-center'>
 					<p className='m-2 w-75'>
 						<i className='bi bi-airplane me-2'/>
@@ -63,7 +62,7 @@ export default function Details() {
 						))}
 					</Swiper>
 				</div>
-			</Row>
+			</Row> */}
 		</Container>
 	)
 }

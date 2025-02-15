@@ -5,6 +5,7 @@ import './countdowntimer.scss';
 export default function CountdownTimer({ targetDate }) {
 	const [timeLeft, setTimeLeft] = useState(null);
 	const [isMobile, setIsMobile] = useState(false);
+	const [animationTriggered, setAnimationTriggered] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -26,7 +27,37 @@ export default function CountdownTimer({ targetDate }) {
 
 		// Cleanup function
 		return () => clearInterval(interval);
-	}, [targetDate])
+	}, [targetDate]);
+
+	useEffect(() => {
+		const animatedCountdowns = document.querySelectorAll('.countdown-container');
+
+		const handleScrollAnimation = (entries, observer) => {
+			entries.forEach(entry => {
+				if(entry.isIntersecting && !animationTriggered) {
+					// Add classes to trigger animation
+					entry.target.classList.add('animated-countdown');
+					setAnimationTriggered(true);
+					observer.unobserve(entry.target); // Stop observing after animation starts
+				}
+			});
+		};
+
+		// Create IntersectionObserver instance
+		const observer = new IntersectionObserver(handleScrollAnimation, {
+			root: null, // Viewport
+			threshold: 0.2 // Trigger when 20% of element is in the view
+		});
+
+		// Loop through all countdown containers and observe each one
+		animatedCountdowns.forEach((element) => observer.observe(element));
+
+		return () => {
+			animatedCountdowns.forEach((element) => observer.unobserve(element));
+			setAnimationTriggered(false);
+		};
+
+	},[animationTriggered])
 
 	// Function to calculate the time left between now and target date
 	const calculateTimeLeft = (target) => {
@@ -74,7 +105,7 @@ export default function CountdownTimer({ targetDate }) {
 			</Col>
 			}
 			{!isMobile && timeLeft &&
-			<Row className='countdown-container gradient-border w-75 m-auto p-2 d-flex align-items-center'>
+			<Row className='countdown-container gradient-border w-75 m-auto p-2 d-flex align-items-center flex-nowrap'>
 				<Col>
 					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1>
 					<h4>days</h4>
