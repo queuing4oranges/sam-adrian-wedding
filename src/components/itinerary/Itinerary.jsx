@@ -17,7 +17,7 @@ export default function Itinerary() {
 		<Container
 			fluid
 			id='itinerary'
-			className='iti-container w-100 h-100 p-5 d-flex align-items-center justify-content-center'
+			className='iti-container w-100 min-vh-100 p-5 d-flex align-items-center justify-content-center'
 		>
 			{showMore ?
 				<SingleDayInfo

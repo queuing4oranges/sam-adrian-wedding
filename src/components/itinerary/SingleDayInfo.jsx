@@ -5,7 +5,8 @@ import {
 } from 'reactstrap'
 
 import Xicon from '../../assets/svgs/Xicon.jsx';
-//TODO make one stylesheet for the whole folder
+
+import './singledayinfo.scss';
 
 export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
 	const { day, date, title, description, note, imageUrl, inspirationUrl } = schedule[selectedDay - 1];

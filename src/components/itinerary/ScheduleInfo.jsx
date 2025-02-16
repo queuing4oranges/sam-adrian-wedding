@@ -11,9 +11,9 @@ export default function ScheduleInfo({ setShowMore, schedule, setSelectedDay }) 
 				key={info.day}
 				className='itinerary-card p-5 position-relative'
 			>	
-				<CardBody>
+				<CardBody className='ps-0'>
 					<p>Day {info.day}</p>
-					<h4 className='fw-bold'>{info.title}</h4>
+					<h5 className='fw-bold'>{info.title}</h5>
 					<p className='position-absolute bottom-0 start-0 ps-5'>{info.date}</p>
 					<Button
 						className='more-info-btn position-absolute top-0 end-0 mt-4'
@@ -24,7 +24,7 @@ export default function ScheduleInfo({ setShowMore, schedule, setSelectedDay }) 
 					>
 						<i className='bi bi-chevron-double-right me-2' />
 						<strong>Details</strong>
-						<i className='bi bi-chevron-double-right me-2' />
+						<i className='bi bi-chevron-double-right ms-2' />
 						
 					</Button>
 				</CardBody>
