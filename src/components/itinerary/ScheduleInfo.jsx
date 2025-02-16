@@ -5,7 +5,7 @@ import './scheduleinfo.scss';
 export default function ScheduleInfo({ setShowMore, schedule, setSelectedDay }) {
 
 	return (
-	<Row className='card-container'>
+	<Row className='card-container grid'>
 		{schedule && schedule.map((info) => (
 			<Card
 				key={info.day}

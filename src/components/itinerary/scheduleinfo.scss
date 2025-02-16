@@ -1,9 +1,12 @@
 @use '../../../src/variables.scss' as vars;
 
 .card-container {
-	display: grid !important;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
+	&.grid {
+		display: grid !important;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
 	justify-content: center;
 	.itinerary-card {
 		width: 20rem;
@@ -45,26 +48,26 @@
 
 /* Large Tablets (992px and below) */
 @media (max-width: 992px) {
-	.card-container {
+	.card-container.grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 /* Tablets & Small Laptops (768px and below) */
 @media (max-width: 768px) {
-	.card-container {
+	.card-container.grid {
 		grid-template-columns: 1fr;
 	}
 }
 
 /* Mobile Devices (576px and below) */
 @media (max-width: 576px) {
-	.card-container {
+	.card-container.grid {
 		grid-template-columns: 1fr;
 	}
 }
 
-/* Extra Small Screens (400px and below) */
-@media (max-width: 400px) {
+// /* Extra Small Screens (400px and below) */
+// @media (max-width: 400px) {
 
-}
+// }
