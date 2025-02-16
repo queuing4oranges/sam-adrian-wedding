@@ -46,7 +46,7 @@ export default function Details() {
 	];
 
 	return (
-		<Container fluid id='details' className='details-container w-100 h-100 p-5'>
+		<Container fluid id='details' className='details-container w-100 min-vh-100 p-5'>
 			<Row className='m-0 p-0 text-wrap'>
 				<AnimatedHeading />
 			</Row>
