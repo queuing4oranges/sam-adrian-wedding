@@ -14,8 +14,26 @@ import AnimatedHeading from './AnimatedHeading.jsx';
 import './details.scss';
 
 export default function Details() {
+	const [isMobile, setIsMobile] = useState(3); // 1: mobile, 2: tablet, 3: desktop
 	// Target date and time for the countdown timer component
 	const targetDate = '2025-09-08T00:01:00';
+	const innerWidth = window.innerWidth;
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth <= 576) {
+				setIsMobile(1);  // Mobile
+			} else if (window.innerWidth <= 768) {
+				setIsMobile(2);  // Tablet
+			} else {
+				setIsMobile(3);  // Desktop
+			}
+		}
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+
+	}, [innerWidth]);
 
 	// Images for slider component
 	const slides = [
@@ -35,20 +53,24 @@ export default function Details() {
 			<Row className='d-flex justify-content-center'>
 				<CountdownTimer targetDate={targetDate}/>
 			</Row>
-			{/* <Row className='d-flex align-items-center justify-content-center'>
-				<div className='round-column mt-5 d-flex flex-column align-items-center justify-content-center text-center'>
-					<p className='m-2 w-75'>
+			<Row className='w-75 text-center mx-auto my-5'>
+				<span className='details-text'>
+					<p>
 						<i className='bi bi-airplane me-2'/>
-						Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday. <br /> <br />
-						Experience Prague, a cozy cottage in the woods, and themed parties with friends.
+						<strong>Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday.</strong>
+					</p>
+					<p>
+						<strong>Experience Prague, a cozy cottage in the woods, and themed parties with friends.</strong>
 						<i className='bi bi-balloon-heart' />
 					</p>
-				</div>
-				<div className='w-50'>
+				</span>
+			</Row>
+			<Row className='d-flex align-items-center justify-content-center'>
+				<div className='slider-container w-75'>
 					<Swiper
 						modules={[Autoplay]}
 						spaceBetween={20}
-						slidesPerView={3}
+						slidesPerView={isMobile}
 						autoplay={{ delay: 3000 }}
 						loop={true}
 					>
@@ -62,7 +84,7 @@ export default function Details() {
 						))}
 					</Swiper>
 				</div>
-			</Row> */}
+			</Row>
 		</Container>
 	)
 }
