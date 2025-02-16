@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
@@ -9,6 +10,24 @@ import { mapData } from './mapData';
 import Xicon from '../../assets/svgs/Xicon';
 
 export default function Neighborhoods({ setShowHoods }) {
+	const [isMobile, setIsMobile] = useState(3); // 1: mobile, 2: tablet, 3: desktop
+	const innerWidth = window.innerWidth;
+
+	// Handles amount of slides to be shown based on screen width
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth >= 1200) {
+				setIsMobile(2);  // Desktop
+			} else {
+				setIsMobile(1);  // Mobile
+			}
+		}
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+
+	}, [innerWidth]);
+
 	return (
 		<CardBody>
 			<div className='d-flex justify-content-between'>
@@ -30,7 +49,7 @@ export default function Neighborhoods({ setShowHoods }) {
 				<Swiper
 					modules={[Pagination, Navigation]}
 					spaceBetween={20}
-					slidesPerView={1}
+					slidesPerView={isMobile}
 					navigation
 					loop={true}
 				>

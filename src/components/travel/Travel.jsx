@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 import './travel.scss';
@@ -6,7 +6,7 @@ import TravelPrague from './TravelPrague';
 import TravelCottage from './TravelCottage';
 
 export default function Travel() {
-	const [activeSection, setActiveSection] = useState('showPrague'); // Show Prague as default on first render
+	const [activeSection, setActiveSection] = useState('showPrague');
 	const [showHoods, setShowHoods] = useState(false);
 	const [showMhd, setShowMhd] = useState(false);
 
