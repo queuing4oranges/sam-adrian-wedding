@@ -1,0 +1,7 @@
+@use '../../../src/variables.scss' as vars;
+
+.close-x {
+	svg polygon:hover {
+		fill: vars.$turq-light;
+	}
+}
