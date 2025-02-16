@@ -14,7 +14,7 @@ export default function TravelCottage() {
 			<CardBody>
 				<h3>Accommodation in the Cottage</h3>
 				<Row>
-					<Col md='4' className='p-3'>
+					<Col xl='4' className='p-3'>
 						<p className='mb-2'>Important note:</p>
 						<p>
 							Guests staying at the cottage will be required to cover the cost of accommodation. There are 8 shared rooms, each hosting 3-4 people. Beds can be chosen upon arrival. The total cost is CZK 3,400 ($145) per person, to be paid by August 10th at the latest.
@@ -23,8 +23,8 @@ export default function TravelCottage() {
 							As for meals, we&apos;ve got you covered! During your stay at the cottage, we&apos;ll provide breakfast, lunch, dinner, as well as alcoholic and non-alcoholic drinks.
 						</p>
 					</Col>
-					<Col md='8' className='p-3'>
-						<div className='row row-cols-3 g-3 p-3'>
+					<Col xl='8' className='p-3'>
+						<div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 p-3'>
 							{accomodationImages.map((img, idx) => (
 								<img
 									src={img}

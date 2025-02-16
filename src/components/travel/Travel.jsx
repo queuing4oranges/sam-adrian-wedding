@@ -27,17 +27,17 @@ export default function Travel() {
 		<Container
 			fluid
 			id='travel'
-			className='travel-container w-100 pb-5 px-5 mb-5'
+			className='travel-container w-100 min-vh-100 pb-5 px-lg-5 mb-5'
 		>
 			<Row className='pt-5'>
 				<h1 className='pt-5 px-5 text-center'>Travel and Accomodation</h1>
 			</Row>
-			<Row className='h-100 pt-5'>
-				<Col md='1' className='d-flex flex-column justify-content-start align-items-center h-100'>
+			<Row className='h-100 pt-5 d-flex justify-content-center'>
+				<Col xl='1' className='h-100 d-flex flex-row flex-xl-column justify-content-center align-items-center mb-3'>
 					{buttons.map(({label, state}) => (
 						<button
 							key={state}
-							className={`round-title d-flex justify-content-center align-items-center my-2 ${ (activeSection === state) ? 'active-btn' : 'inactive-btn'}`}
+							className={`round-title d-flex justify-content-center align-items-center m-2 ${ (activeSection === state) ? 'active-btn' : 'inactive-btn'}`}
 							onClick={() => {handleClick(state)}}
 						>
 							<p className='m-0 fw-bolder'>{label}</p>

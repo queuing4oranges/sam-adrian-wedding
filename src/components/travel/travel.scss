@@ -36,8 +36,6 @@
 }
 
 .hood-btn {
-	font-size: smaller;
-	color: #164443;
 	background-color: transparent;
 	border: 1px solid vars.$turq-dark;
 	position: relative;
@@ -82,7 +80,8 @@
 	}
 }
 
-@media (min-width: 768px) {
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
 	.hood-btn {
 		padding: 16px 32px;
 	}

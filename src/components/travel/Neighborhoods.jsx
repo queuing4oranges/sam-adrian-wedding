@@ -30,7 +30,7 @@ export default function Neighborhoods({ setShowHoods }) {
 				<Swiper
 					modules={[Pagination, Navigation]}
 					spaceBetween={20}
-					slidesPerView={2}
+					slidesPerView={1}
 					navigation
 					loop={true}
 				>
@@ -52,8 +52,8 @@ export default function Neighborhoods({ setShowHoods }) {
 								<h3 className='mb-4'>{map?.hood}</h3>
 								<p className='flex-grow-1'>{map?.info}</p>
 								<div className='mt-auto'>
-									<p>{map?.note && `Note: ${map?.note}`}</p>
-									<p>{map?.highlights && `Highlights: ${map?.highlights}`}</p>
+									<p>{map?.note && <><strong>Note:</strong> {map.note}</>}</p>
+									<p>{map?.highlights && <><strong>Highlights:</strong> {map?.highlights}</>}</p>
 								</div>
 							</div>
 							</Card>
