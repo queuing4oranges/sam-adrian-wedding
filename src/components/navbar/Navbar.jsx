@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 
 import { navLinks } from './navLinks';
+import MobileNavbar from './MobileNavbar';
 import './navbar.scss';
 
 export default function NavbarContainer() {
@@ -32,8 +33,7 @@ export default function NavbarContainer() {
 	return (
 		<>
 			{showMobileMenu ? (
-				// TODO <MobileNavbar />
-				null
+				<MobileNavbar />
 			) : (
 				<Container fluid className='navbar-container'>
 					<Navbar fixed='top'>
