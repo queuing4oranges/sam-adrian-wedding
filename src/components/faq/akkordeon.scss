@@ -34,13 +34,16 @@
 
 .box-title {
 	height: 7rem;
-	line-height: 2rem;
+	line-height: 1.8rem;
 	padding: 3rem;
 	display: flex;
 	justify-content: start;
 	align-items: center;
 	cursor: pointer;
-	font-weight: 600;
+	background-color: vars.$turq-dark-dark;
+	color: white;
+	margin-top: 1rem;
+	text-align: center;
 }
 
 .box-content {
@@ -67,4 +70,11 @@ input:checked + .box .box-close {
 
 .faq-rsvp-btn {
 	background-color: vars.$secondary-bg;
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	.box-title {
+		padding: 1rem;
+	}
 }

@@ -62,13 +62,13 @@ export default function faq() {
 		<Container
 			fluid
 			id='faq'
-			className='faq-container w-100 p-5'
+			className='faq-container min-vh-100 w-100 p-5'
 		>
 			<Row className='pt-5 px-5'>
 				<h1 className='px-5 text-center'>FAQ</h1>
 			</Row>
-			<Row className='py-5 w-50 mx-auto'>
-				<Col>
+			<Row className='py-5 d-flex justify-content-center'>
+				<Col xl='6'>
 					<Akkordeon />
 				</Col>
 			</Row>
