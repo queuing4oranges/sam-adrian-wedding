@@ -1,16 +1,38 @@
 @use '../../../src/variables.scss' as vars;
 
 .navbar-container {
-	& .nav-link {
-		color: vars.$turq-dark;
+	.nav-link {
+		position: relative;
+		text-decoration: none;
+		display: inline-block;
+		padding-bottom: 5px;
+		transition: color 0.3s ease;
+		color: vars.$turq-dark-dark !important;
+	}
 
-		&:hover {
-			color: vars.$turq-light;
-			cursor: pointer;
-		}
-		
-		&:active, &:focus {
-			color: vars.$primary-bg;
-		}
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 10px;
+		background-image: url('../../assets/svgs/navlink.svg'); /* Custom crayon stroke */
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		opacity: 0;
+		transform: scaleX(0);
+		transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+
+	.nav-link:hover::after {
+		opacity: 1;
+		transform: scaleX(1);
+	}
+
+	.active {
+		color: vars.$turq-light-light !important;
 	}
 }

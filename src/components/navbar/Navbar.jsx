@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
-	Navbar, Nav, NavItem, NavLink,
+	Navbar, Nav, NavItem,
 	Container, Col,
 } from 'reactstrap';
 
@@ -10,7 +10,9 @@ import './navbar.scss';
 
 export default function NavbarContainer() {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
-	
+	const [activeLink, setActiveLink] = useState('');
+
+	// Handle what Navbar will be shown
 	useEffect(()=>{
 		const handleResize = () => {
 			if (window.innerWidth <= 768) {
@@ -19,17 +21,27 @@ export default function NavbarContainer() {
 				setShowMobileMenu(false)
 			}
 		};
-		
-		handleResize();
-		
+
+		// handleResize();
 		window.addEventListener('resize', handleResize);
 		
+		// Listen for changes in the URL (hash) and update active link
+		const handleHashChange = () => {
+		setActiveLink(window.location.hash); // Update active link based on hash
+		};
+
+		window.addEventListener('hashchange', handleHashChange);
+
+		// Initial check if a section is already active (on page load)
+		handleHashChange();
+
 		// Cleanup on unmount
 		return () => {
-			window.removeEventListener('resize', handleResize)
+			window.removeEventListener('resize', handleResize);
+			window.removeEventListener('hashchange', handleHashChange);
 		}
 	}, [])
-	
+
 	return (
 		<>
 			{showMobileMenu ? (
@@ -41,9 +53,12 @@ export default function NavbarContainer() {
 							<Nav>
 								{navLinks && navLinks.map((link, idx) => (
 									<NavItem key={idx}>
-										<NavLink href={link.href}>
+										<a
+											href={link.href}
+											className={`nav-link ${activeLink === link.href ? 'active' : ''}`}
+										>
 											{link.name}
-										</NavLink>
+										</a>
 									</NavItem>
 								))}
 							</Nav>
