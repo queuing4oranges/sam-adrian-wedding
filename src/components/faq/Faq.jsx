@@ -61,7 +61,6 @@ export default function faq() {
 	return (
 		<Container
 			fluid
-			id='faq'
 			className='faq-container min-vh-100 w-100 p-5'
 		>
 			<Row className='pt-5 px-5'>

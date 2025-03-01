@@ -16,7 +16,6 @@ export default function Itinerary() {
 	return (
 		<Container
 			fluid
-			id='itinerary'
 			className='iti-container w-100 min-vh-100 p-3 p-md-4 p-lg-5 py-5 d-flex align-items-center justify-content-center'
 		>
 			{showMore ?

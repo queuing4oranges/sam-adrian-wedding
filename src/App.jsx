@@ -1,22 +1,18 @@
 import './App.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Navbar from './components/navbar/Navbar';
-import Welcome from './components/welcome/Welcome';
-import Details from './components/details/Details';
-import Itinerary from './components/itinerary/Itinerary';
-import Faq from './components/faq/Faq';
-import Travel from './components/travel/Travel';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+
 
 function App() {
 
 	return (
 		<>
-			<Navbar />
-			<Welcome />
-			<Details />
-			<Itinerary />
-			<Travel />
-			<Faq />
+			<Router basename='/'>
+				<Routes>
+					<Route  exact path='/' element={<Home />} />
+				</Routes>
+			</Router>
 		</>
 	)
 }

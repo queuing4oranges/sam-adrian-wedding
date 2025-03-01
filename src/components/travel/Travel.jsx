@@ -26,7 +26,6 @@ export default function Travel() {
 	return (
 		<Container
 			fluid
-			id='travel'
 			className='travel-container w-100 min-vh-100 pb-5 px-lg-5 mb-5'
 		>
 			<Row className='pt-5'>
