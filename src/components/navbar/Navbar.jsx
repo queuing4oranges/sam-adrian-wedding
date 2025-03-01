@@ -22,18 +22,14 @@ export default function NavbarContainer() {
 			}
 		};
 
-		// handleResize();
-		window.addEventListener('resize', handleResize);
-		
 		// Listen for changes in the URL (hash) and update active link
 		const handleHashChange = () => {
-		setActiveLink(window.location.hash); // Update active link based on hash
+			setActiveLink(window.location.hash); // Update active link based on hash
 		};
 
+		// handleResize();
+		window.addEventListener('resize', handleResize);
 		window.addEventListener('hashchange', handleHashChange);
-
-		// Initial check if a section is already active (on page load)
-		handleHashChange();
 
 		// Cleanup on unmount
 		return () => {

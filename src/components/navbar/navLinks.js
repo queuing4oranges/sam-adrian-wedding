@@ -1,26 +1,32 @@
 export const navLinks = [
 	{
 		name: 'Welcome',
-		href: '#welcome'
+		href: '#welcome',
+		to: 'welcome'
 	},
 	{
 		name: 'Event Details',
-		href: '#details'
+		href: '#details',
+		to: 'details'
 	},
 	{
 		name: 'Itinerary',
-		href: '#itinerary'
+		href: '#itinerary',
+		to: 'itinerary'
 	},
 	{
 		name: 'Travel and Accommodation',
-		href: '#travel'
+		href: '#travel',
+		to: 'travel'
 	},
 	{
 		name: 'FAQ',
-		href: '#faq'
+		href: '#faq',
+		to: 'faq'
 	},
 	{
 		name: 'RSVP',
-		href: '#rsvp'
+		href: '#rsvp',
+		to: 'rsvp'
 	}
 ]
