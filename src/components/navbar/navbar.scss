@@ -32,7 +32,7 @@
 		transform: scaleX(1);
 	}
 
-	.active {
-		color: vars.$turq-light-light !important;
+	.active-link {
+		color: vars.$primary-bg !important;
 	}
 }

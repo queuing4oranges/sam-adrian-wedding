@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import {
 	Navbar, Nav, NavItem,
 	Container, Col,
@@ -11,7 +12,8 @@ import './navbar.scss';
 
 export default function NavbarContainer() {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
-	const [activeLink, setActiveLink] = useState('');
+	const [activeLink, setActiveLink] = useState(window.location.hash);
+	const location = useLocation();
 
 	// Handle what Navbar will be shown
 	useEffect(()=>{
@@ -24,20 +26,17 @@ export default function NavbarContainer() {
 		};
 
 		// Listen for changes in the URL (hash) and update active link
-		const handleHashChange = () => {
-			setActiveLink(window.location.hash); // Update active link based on hash
-		};
+		if (location.hash) {
+			setActiveLink(location.hash); // Update active link based on hash
+		}
 
-		// handleResize();
 		window.addEventListener('resize', handleResize);
-		window.addEventListener('hashchange', handleHashChange);
 
 		// Cleanup on unmount
 		return () => {
 			window.removeEventListener('resize', handleResize);
-			window.removeEventListener('hashchange', handleHashChange);
 		}
-	}, [])
+	}, [location])
 
 	return (
 		<>
@@ -50,7 +49,12 @@ export default function NavbarContainer() {
 							<Nav>
 								{navLinks && navLinks.map((link, idx) => (
 									<NavItem key={idx}>
-										<NavLink className='nav-link' to={`/${link.href}`} smooth='true' duration={1000}>
+										<NavLink
+											className={`nav-link ${activeLink === link.href ? 'active-link' : ''}`}
+											to={`/${link.href}`}
+											smooth='true'
+											duration={700}
+										>
 											{link.name}
 										</NavLink>
 									</NavItem>
