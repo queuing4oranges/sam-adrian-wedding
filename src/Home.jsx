@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useLocation } from "react-router-dom";
+
 import Navbar from './components/navbar/Navbar';
 import Welcome from './components/welcome/Welcome';
 import Details from './components/details/Details';
@@ -6,6 +9,17 @@ import Faq from './components/faq/Faq';
 import Travel from './components/travel/Travel';
 
 export default function Home() {
+	const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace("#", ""); // Remove '#' to match ID
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 	return (
 		<div>
 			<Navbar />

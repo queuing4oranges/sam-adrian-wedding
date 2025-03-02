@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
 import {
 	Navbar, Nav, NavItem,
 	Container, Col,
@@ -44,43 +44,21 @@ export default function NavbarContainer() {
 			{showMobileMenu ? (
 				<MobileNavbar />
 			) : (
-				<nav>
-      <ul>
-        <li>
-          <Link to="welcome" smooth duration={500}>Welcome</Link>
-        </li>
-        <li>
-          <Link to="details" smooth duration={500}>Details</Link>
-        </li>
-        <li>
-          <Link to="itinerary" smooth duration={500}>Itinerary</Link>
-        </li>
-        <li>
-          <Link to="travel" smooth duration={500}>Travel</Link>
-        </li>
-        <li>
-          <Link to="faq" smooth duration={500}>FAQ</Link>
-        </li>
-      </ul>
-    </nav>
-				// <Container fluid className='navbar-container'>
-				// 	<Navbar fixed='top'>
-				// 		<Col className='d-flex justify-content-center'>
-				// 			<Nav>
-				// 				{navLinks && navLinks.map((link, idx) => (
-				// 					<NavItem key={idx}>
-				// 						<a
-				// 							href={link.href}
-				// 							className={`nav-link ${activeLink === link.href ? 'active' : ''}`}
-				// 						>
-				// 							{link.name}
-				// 						</a>
-				// 					</NavItem>
-				// 				))}
-				// 			</Nav>
-				// 		</Col>
-				// 	</Navbar>
-				// </Container>
+				<Container fluid className='navbar-container'>
+					<Navbar fixed='top'>
+						<Col className='d-flex justify-content-center'>
+							<Nav>
+								{navLinks && navLinks.map((link, idx) => (
+									<NavItem key={idx}>
+										<NavLink className='nav-link' to={`/${link.href}`} smooth='true' duration={1000}>
+											{link.name}
+										</NavLink>
+									</NavItem>
+								))}
+							</Nav>
+						</Col>
+					</Navbar>
+				</Container>
 			)}
 		</>
 	);
