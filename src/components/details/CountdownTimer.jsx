@@ -105,33 +105,24 @@ export default function CountdownTimer({ targetDate }) {
 			</Col>
 			}
 			{!isMobile && timeLeft &&
-			<Row className='countdown-container gradient-border w-75 m-auto p-2 d-flex align-items-center flex-nowrap'>
-				<Col>
-					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1>
-					<h4>days</h4>
-				</Col>
-				<Col>
-					<h1>:</h1>
-				</Col>
-				<Col>
-					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1>
-					<h4>hours</h4>
-				</Col>
-				<Col>
-					<h1>:</h1>
-				</Col>
-				<Col>
-					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1>
-					<h4>minutes</h4>
-				</Col>
-				<Col>
-					<h1>:</h1>
-				</Col>
-				<Col>
-					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1>
-					<h4>seconds</h4>
-				</Col>
-			</Row>
+			<div className='countdown-container w-75 m-auto p-2 d-flex justify-content-center align-items-center flex-nowrap'>
+				<div className='countdown-cube days'>
+					<p className='number'>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</p>
+					<p className='time'>days</p>
+				</div>
+				<div className='countdown-cube hours'>
+					<p className='number'>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</p>
+					<p className='time'>hours</p>
+				</div>
+				<div className='countdown-cube minutes'>
+					<p className='number'>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</p>
+					<p className='time'>minutes</p>
+				</div>
+				<div className='countdown-cube seconds'>
+					<p className='number'>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</p>
+					<p className='time'>seconds</p>
+				</div>
+			</div>
 			}
 		</>
 	);

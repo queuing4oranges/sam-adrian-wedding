@@ -7,13 +7,61 @@
 		max-width: 100%;
 	}
 
-	.column-col {
-		padding: 0;
-	}
-
 	&.animated-countdown {
 		animation: slideInFromRight 3s ease-out;
 		max-width: 100%;
+	}
+
+	.countdown-cube {
+		border: vars.$turq-light dotted 3px;
+		padding: 1.5rem;
+		margin: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& p {
+			margin: 0;
+			font-weight: bolder;
+			color: vars.$secondary-bg;
+		}
+
+		&.days {
+			width: 13rem;
+			height: 13rem;
+
+			& .number {
+				font-size: 5rem;
+			}
+		}
+
+		&.hours {
+			width: 11rem;
+			height: 11rem;
+
+			& .number {
+				font-size: 4rem;
+			}
+		}
+
+		&.minutes {
+			width: 9rem;
+			height: 9rem;
+
+			& .number {
+				font-size: 2rem;
+			}
+		}
+
+		&.seconds {
+			width: 7rem;
+			height: 7rem;
+
+			& .number {
+				font-size: 1rem;
+			}
+		}
 	}
 }
 
@@ -25,41 +73,6 @@
 	to {
 		transform: translateX(0);
 		opacity: 1;
-	}
-}
-
-.gradient-border {
-	--border-width: 3px;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 10rem;
-	padding: 3rem;
-	background: white;
-	border-radius: 10px;
-	flex-wrap: wrap;
-
-	&::after {
-		position: absolute;
-		content: "";
-		top: calc(-1 * var(--border-width));
-		left: calc(-1 * var(--border-width));
-		z-index: -1;
-		width: calc(100% + var(--border-width) * 2);
-		height: calc(100% + var(--border-width) * 2);
-		background: linear-gradient(
-			60deg,
-			vars.$primary-bg,
-			vars.$secondary-bg,
-			vars.$yellow,
-			vars.$turq-dark,
-			vars.$turq-light
-		);
-		background-size: 300% 300%;
-		background-position: 0 50%;
-		border-radius: 10px;
-		animation: moveGradient 4s alternate infinite;
 	}
 }
 
