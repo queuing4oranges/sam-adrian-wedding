@@ -39,7 +39,7 @@ export default function AnimatedHeading() {
 	},[animationTriggered])
 
 	return (
-		<h1 className='details-heading fw-bold text-center'>
+		<h1 className='details-heading text-center'>
 			Monday, September 8 - Friday, September 12
 		</h1>
 	);

@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Row, Col } from 'reactstrap';
 import './countdowntimer.scss';
 
 export default function CountdownTimer({ targetDate }) {
 	const [timeLeft, setTimeLeft] = useState(null);
-	const [isMobile, setIsMobile] = useState(false);
+	const [isMobile, setIsMobile] = useState(window.innerWidth);
 	const [animationTriggered, setAnimationTriggered] = useState(false);
 
 	useEffect(() => {
@@ -85,24 +84,28 @@ export default function CountdownTimer({ targetDate }) {
 	return (
 		<>
 			{isMobile && timeLeft &&
-			<Col className='countdown-container gradient-border'>
-				<Row className='text-center'>
-					<h1>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</h1>
-					<h4>days</h4>
-				</Row>
-				<Row className='text-center'>
-					<h1>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</h1>
-					<h4>hours</h4>
-				</Row>
-				<Row className='text-center'>
-					<h1>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</h1>
-					<h4>minutes</h4>
-				</Row>
-				<Row className='text-center'>
-					<h1>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</h1>
-					<h4>seconds</h4>
-				</Row>
-			</Col>
+			<div className='countdown-container-mobile d-flex flex-column justify-content-center'>
+				<div className='d-flex justify-content-center align-items-center'>
+					<div className='countdown-circle days'>
+						<p className='number'>{(timeLeft?.days < 10) ? `0${timeLeft?.days}` : timeLeft?.days}</p>
+						<p className='time'>days</p>
+					</div>
+					<div className='countdown-circle hours'>
+						<p className='number'>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</p>
+						<p className='time'>hours</p>
+					</div>
+				</div>
+				<div className='d-flex justify-content-center align-items-center'>
+					<div className='countdown-circle minutes'>
+						<p className='number'>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</p>
+						<p className='time'>minutes</p>
+					</div>
+					<div className='countdown-circle seconds'>
+						<p className='number'>{(timeLeft?.seconds < 10) ? `0${timeLeft?.seconds}` : timeLeft?.seconds}</p>
+						<p className='time'>seconds</p>
+					</div>
+				</div>
+			</div>
 			}
 			{!isMobile && timeLeft &&
 			<div className='countdown-container w-75 m-auto p-2 d-flex justify-content-center align-items-center flex-nowrap'>

@@ -1,12 +1,6 @@
 @use '../../../src/variables.scss' as vars;
 
 .countdown-container {
-	h1 {
-		font-family: "Roboto Mono", serif, Arial, sans-serif;
-		color: vars.$secondary-bg !important;
-		max-width: 100%;
-	}
-
 	&.animated-countdown {
 		animation: slideInFromRight 3s ease-out;
 		max-width: 100%;
@@ -25,6 +19,7 @@
 			margin: 0;
 			font-weight: bolder;
 			color: vars.$secondary-bg;
+			font-family: "Roboto Mono", serif, Arial, sans-serif;
 		}
 
 		&.days {
@@ -33,6 +28,10 @@
 
 			& .number {
 				font-size: 5rem;
+			}
+
+			& .time {
+				font-size: 2rem;
 			}
 		}
 
@@ -43,6 +42,10 @@
 			& .number {
 				font-size: 4rem;
 			}
+
+			& .time {
+				font-size: 1.5rem;
+			}
 		}
 
 		&.minutes {
@@ -52,6 +55,10 @@
 			& .number {
 				font-size: 2rem;
 			}
+
+			& .time {
+				font-size: 1rem;
+			}
 		}
 
 		&.seconds {
@@ -60,6 +67,80 @@
 
 			& .number {
 				font-size: 1rem;
+			}
+
+			& .time {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+.countdown-container-mobile {
+	.countdown-circle {
+		width: 20rem;
+		height: 20rem;
+		padding: 1.5rem;
+		margin: 0.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		animation: 	glow 1.5s infinite alternate ease-in-out;
+
+		& p {
+			margin: 0;
+			font-weight: bolder;
+			color: vars.$secondary-bg;
+			font-family: "Roboto Mono", serif, Arial, sans-serif;
+		}
+
+		&.days {
+			width: 10rem;
+			height: 10rem;
+			& .number {
+				font-size: 2.5rem;
+			}
+
+			& .time {
+				font-size: 1rem;
+			}
+		}
+
+		&.hours {
+			width: 8rem;
+			height: 8rem;
+			& .number {
+				font-size: 2.25rem;
+			}
+
+			& .time {
+				font-size: 0.75rem;
+			}
+		}
+
+		&.minutes {
+			width: 7rem;
+			height: 7rem;
+
+			& .number {
+				font-size: 2rem;
+			}
+
+			& .time {
+				font-size: 0.75rem;
+			}
+		}
+
+		&.seconds {
+			width: 6rem;
+			height: 6rem;
+			& .number {
+				font-size: 1.75rem;
+			}
+
+			& .time {
+				font-size: 0.75rem;
 			}
 		}
 	}
@@ -76,70 +157,11 @@
 	}
 }
 
-@keyframes moveGradient {
+@keyframes glow {
+	0%, 100% {
+		box-shadow: 0 0 5px vars.$turq-light;
+	}
 	50% {
-		background-position: 100% 50%;
-	}
-}
-
-/* Large Tablets (992px and below) */
-@media (max-width: 992px) {
-	.countdown-container {
-		h1 {
-			font-size: 3rem;
-		}
-
-		h4 {
-			font-size: 1.25rem;
-		}
-	}
-
-	.gradient-border {
-		padding: 2rem;
-	}
-
-}
-
-/* Tablets & Small Laptops (768px and below) */
-@media (max-width: 768px) {
-	.countdown-container {
-		h1 {
-			font-size: 2.5rem;
-			flex-wrap: nowrap;
-		}
-
-		h4 {
-			font-size: 1rem;
-		}
-	}
-
-	.gradient-border {
-		padding: 1.5rem;
-	}
-}
-
-/* Mobile Devices (576px and below) */
-@media (max-width: 576px) {
-	.countdown-container {
-		h1 {
-			font-size: 2rem;
-		}
-
-		h4 {
-			font-size: 0.75rem;
-		}
-	}
-
-	.gradient-border {
-		padding: 1rem;
-	}
-}
-
-/* Extra Small Screens (400px and below) */
-@media (max-width: 400px) {
-	.countdown-container {
-		h1 {
-			font-size: 1rem;
-		}
+		box-shadow: 0 0 15px vars.$turq-light;
 	}
 }

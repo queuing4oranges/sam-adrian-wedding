@@ -46,21 +46,21 @@ export default function Details() {
 	];
 
 	return (
-		<Container fluid className='details-container w-100 min-vh-100 p-5'>
+		<Container fluid className='details-container w-100 min-vh-100 p-5 p-sm-3 p-xs-2'>
 			<Row className='m-0 p-0 text-wrap'>
 				<AnimatedHeading />
 			</Row>
 			<Row className='d-flex justify-content-center'>
 				<CountdownTimer targetDate={targetDate}/>
 			</Row>
-			<Row className='w-75 text-center mx-auto my-5'>
+			<Row className='my-2 my-md-5'>
 				<span className='details-text'>
-					<p>
+					<p className='text-left text-end'>
 						<i className='bi bi-airplane me-2'/>
-						<strong>Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday.</strong>
+						Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday.
 					</p>
-					<p>
-						<strong>Experience Prague, a cozy cottage in the woods, and themed parties with friends.</strong>
+					<p className='text-right text-start'>
+						Experience Prague, a cozy cottage in the woods, and themed parties with friends.
 						<i className='bi bi-balloon-heart' />
 					</p>
 				</span>
