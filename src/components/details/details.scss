@@ -1,9 +1,8 @@
 @use '../../../src/variables.scss' as vars;
 
 .details-container {
-
 	& h1 {
-		font-size: 4rem;
+		font-size: 1.75rem !important;
 		color: vars.$turq-dark-dark;
 	}
 
@@ -16,7 +15,7 @@
 @media (max-width: 992px) {
 	.details-container {
 		h1 {
-			font-size: 3rem;
+			font-size: 3.5rem;
 		}
 	}
 }
@@ -25,21 +24,19 @@
 @media (max-width: 768px) {
 	.details-container {
 		h1 {
-			font-size: 2rem;
+			font-size: 3rem;
 		}
-
-		.text-left {
-			background-image: url('../../assets/svgs/blue-paint-opaque.svg');
-			background-position: left;
+		.text-left, .text-right {
 			background-size: 100% 100%;
 			color: vars.$turq-dark-dark;
+			line-height: 1.2;
+		}
+		.text-left {
+			background-image: url('../../assets/svgs/blue-paint-opaque.svg');
 		}
 
 		.text-right {
 			background-image: url('../../assets/svgs/orange-paint-opaque.svg');
-			background-position: right;
-			background-size: 100% 100%;
-			color: vars.$turq-dark-dark;
 		}
 	}
 }
@@ -49,11 +46,6 @@
 	.details-container {
 		h1 {
 			font-size: 1.5rem;
-		}
-
-		.gradient-border {
-			height: 4rem;
-			padding: 1rem;
 		}
 	}
 }

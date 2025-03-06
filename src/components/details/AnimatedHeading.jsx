@@ -39,8 +39,10 @@ export default function AnimatedHeading() {
 	},[animationTriggered])
 
 	return (
-		<h1 className='details-heading text-center'>
-			Monday, September 8 - Friday, September 12
+		<h1 className='details-heading text-center d-flex flex-column'>
+			<span>Monday, September 8</span>
+			-
+			<span>Friday, September 12</span>
 		</h1>
 	);
 }

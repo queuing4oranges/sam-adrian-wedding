@@ -78,8 +78,6 @@
 
 .countdown-container-mobile {
 	.countdown-circle {
-		width: 20rem;
-		height: 20rem;
 		padding: 1.5rem;
 		margin: 0.5rem;
 		display: flex;
@@ -96,10 +94,10 @@
 		}
 
 		&.days {
-			width: 10rem;
-			height: 10rem;
+			width: 7.5rem;
+			height: 7.5rem;
 			& .number {
-				font-size: 2.5rem;
+				font-size: 2rem;
 			}
 
 			& .time {
@@ -108,23 +106,23 @@
 		}
 
 		&.hours {
-			width: 8rem;
-			height: 8rem;
+			width: 6rem;
+			height: 6rem;
 			& .number {
-				font-size: 2.25rem;
+				font-size: 1.75rem;
 			}
 
 			& .time {
-				font-size: 0.75rem;
+				font-size: 1rem;
 			}
 		}
 
 		&.minutes {
-			width: 7rem;
-			height: 7rem;
+			width: 5rem;
+			height: 5rem;
 
 			& .number {
-				font-size: 2rem;
+				font-size: 1.5rem;
 			}
 
 			& .time {
@@ -133,10 +131,10 @@
 		}
 
 		&.seconds {
-			width: 6rem;
-			height: 6rem;
+			width: 4rem;
+			height: 4rem;
 			& .number {
-				font-size: 1.75rem;
+				font-size: 1.25rem;
 			}
 
 			& .time {

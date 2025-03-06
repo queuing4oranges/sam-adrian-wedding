@@ -14,7 +14,7 @@ import AnimatedHeading from './AnimatedHeading.jsx';
 import './details.scss';
 
 export default function Details() {
-	const [isMobile, setIsMobile] = useState(3); // 1: mobile, 2: tablet, 3: desktop
+	const [isMobile, setIsMobile] = useState(null); // 1: mobile, 2: tablet, 3: desktop
 	// Target date and time for the countdown timer component
 	const targetDate = '2025-09-08T00:01:00';
 	const innerWidth = window.innerWidth;
@@ -50,16 +50,16 @@ export default function Details() {
 			<Row className='m-0 p-0 text-wrap'>
 				<AnimatedHeading />
 			</Row>
-			<Row className='d-flex justify-content-center'>
+			<Row className='d-flex justify-content-center' style={{height: '15rem'}}>
 				<CountdownTimer targetDate={targetDate}/>
 			</Row>
 			<Row className='my-2 my-md-5'>
 				<span className='details-text'>
-					<p className='text-left text-end'>
+					<p className='text-left text-center'>
 						<i className='bi bi-airplane me-2'/>
 						Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday.
 					</p>
-					<p className='text-right text-start'>
+					<p className='text-right text-center'>
 						Experience Prague, a cozy cottage in the woods, and themed parties with friends.
 						<i className='bi bi-balloon-heart' />
 					</p>
