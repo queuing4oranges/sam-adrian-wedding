@@ -1,43 +1,13 @@
-import { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide} from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-
 import { Container, Row } from 'reactstrap';
 
-import CountdownTimer from './CountdownTimer.jsx';
-import AnimatedHeading from './AnimatedHeading.jsx';
-import { getDeviceType } from './utils/getDeviceType.js';
+import CountdownTimer from './components/CountdownTimer.jsx';
+import AnimatedHeading from './components/AnimatedHeading.jsx';
+import SlideShow from './components/SlideShow.jsx';
 
 import './details.scss';
 
 export default function Details() {
-	const [isMobile, setIsMobile] = useState(getDeviceType);
-	// Target date and time for the countdown timer component
 	const targetDate = '2025-09-08T00:01:00';
-
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(getDeviceType()); // Update device type
-		}
-
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-
-	}, []);
-
-	// Images for slider component
-	const slides = [
-		{ id: 1, image: '../../src/assets/sam-and-adrian/1.png' },
-		{ id: 2, image: '../../src/assets/sam-and-adrian/2.png' },
-		{ id: 3, image: '../../src/assets/sam-and-adrian/3.png' },
-		{ id: 4, image: '../../src/assets/sam-and-adrian/4.png' },
-		{ id: 5, image: '../../src/assets/sam-and-adrian/5.png' },
-		{ id: 6, image: '../../src/assets/sam-and-adrian/6.png' },
-	];
 
 	return (
 		<Container fluid className='details-container w-100 min-vh-100 p-5 p-sm-3 p-xs-2'>
@@ -60,24 +30,7 @@ export default function Details() {
 				</span>
 			</Row>
 			<Row className='d-flex align-items-center justify-content-center'>
-				<div className='slider-container w-75'>
-					<Swiper
-						modules={[Autoplay]}
-						spaceBetween={20}
-						slidesPerView={isMobile || 1}
-						autoplay={{ delay: 3000 }}
-						loop={true}
-					>
-						{slides.map((slide) => (
-							<SwiperSlide key={slide.id}>
-								<img
-									src={slide.image}
-									style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '3rem' }}
-								/>
-							</SwiperSlide>
-						))}
-					</Swiper>
-				</div>
+				<SlideShow />
 			</Row>
 		</Container>
 	)

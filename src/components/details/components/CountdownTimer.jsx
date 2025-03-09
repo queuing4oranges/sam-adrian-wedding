@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react';
+
 import './countdowntimer.scss';
 
 export default function CountdownTimer({ targetDate }) {
 	const [timeLeft, setTimeLeft] = useState(null);
-	const [isMobile, setIsMobile] = useState(window.innerWidth);
+	const [isMobile, setIsMobile] = useState(false);
 	const [animationTriggered, setAnimationTriggered] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth < 768);
+			if (window.innerWidth <= 576) {
+				setIsMobile(true);
+			}
+			else {
+				setIsMobile(false);
+			}
 		};
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+	}, [isMobile]);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
