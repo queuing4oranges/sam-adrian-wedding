@@ -39,7 +39,7 @@ export default function AnimatedHeading() {
 	},[animationTriggered])
 
 	return (
-		<h1 className='details-heading text-center d-flex flex-column'>
+		<h1 className='details-heading text-center d-flex justify-content-center'>
 			<span>Monday, September 8</span>
 			-
 			<span>Friday, September 12</span>

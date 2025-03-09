@@ -11,7 +11,7 @@ import MobileNavbar from './MobileNavbar';
 import './navbar.scss';
 
 export default function NavbarContainer() {
-	const [showMobileMenu, setShowMobileMenu] = useState(window.innerWidth);
+	const [showMobileMenu, setShowMobileMenu] = useState(window.innerWidth <= 768);
 	const [activeLink, setActiveLink] = useState(window.location.hash);
 	const location = useLocation();
 

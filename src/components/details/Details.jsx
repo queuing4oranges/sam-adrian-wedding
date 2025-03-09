@@ -10,30 +10,24 @@ import { Container, Row } from 'reactstrap';
 
 import CountdownTimer from './CountdownTimer.jsx';
 import AnimatedHeading from './AnimatedHeading.jsx';
+import { getDeviceType } from './utils/getDeviceType.js';
 
 import './details.scss';
 
 export default function Details() {
-	const [isMobile, setIsMobile] = useState(null); // 1: mobile, 2: tablet, 3: desktop
+	const [isMobile, setIsMobile] = useState(getDeviceType);
 	// Target date and time for the countdown timer component
 	const targetDate = '2025-09-08T00:01:00';
-	const innerWidth = window.innerWidth;
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth <= 576) {
-				setIsMobile(1);  // Mobile
-			} else if (window.innerWidth <= 768) {
-				setIsMobile(2);  // Tablet
-			} else {
-				setIsMobile(3);  // Desktop
-			}
+			setIsMobile(getDeviceType()); // Update device type
 		}
 
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 
-	}, [innerWidth]);
+	}, []);
 
 	// Images for slider component
 	const slides = [
@@ -70,7 +64,7 @@ export default function Details() {
 					<Swiper
 						modules={[Autoplay]}
 						spaceBetween={20}
-						slidesPerView={isMobile}
+						slidesPerView={isMobile || 1}
 						autoplay={{ delay: 3000 }}
 						loop={true}
 					>
