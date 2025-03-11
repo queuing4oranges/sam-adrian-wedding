@@ -1,13 +1,19 @@
 @use '../../../src/variables.scss' as vars;
 
 .details-container {
+	background-image: url('../../assets/svgs/patternpad-bg.svg');
 	& h1 {
 		font-size: 3rem !important;
-		color: vars.$turq-dark-dark;
 	}
 
 	& .bi-airplane::before {
 		transform: rotate(45deg);
+	}
+
+	.details-row {
+		max-height: 40rem;
+		background-color: vars.$turq-dark;
+		color: white;
 	}
 }
 
@@ -30,7 +36,7 @@
 		}
 		.text-left, .text-right {
 			background-size: 100% 100%;
-			color: vars.$turq-dark-dark;
+			color: white;
 			line-height: 1.2;
 		}
 		.text-left {

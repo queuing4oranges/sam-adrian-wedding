@@ -1,26 +1,13 @@
-import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide} from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-import { getDeviceType } from '../utils/getDeviceType';
+import './slideshow.scss';
 
 export default function SlideShow() {
-	const [isMobile, setIsMobile] = useState(getDeviceType);
-
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(getDeviceType()); // Update device type
-		}
-
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-
-	}, []);
-
 	// Images for slider component
 	const slides = [
 		{ id: 1, image: '../../src/assets/sam-and-adrian/1.png' },
@@ -32,20 +19,17 @@ export default function SlideShow() {
 	];
 
 	return (
-		<div className='slider-container w-75'>
+		<div className='slider-container w-100 d-flex justify-content-center'>
 			<Swiper
-				modules={[Autoplay]}
-				spaceBetween={20}
-				slidesPerView={isMobile || 1}
+				modules={[Autoplay, Pagination]}
+				slidesPerView={1}
 				autoplay={{ delay: 3000 }}
 				loop={true}
+				pagination={{ clickable: true }}
 			>
 				{slides.map((slide) => (
 					<SwiperSlide key={slide.id}>
-						<img
-							src={slide.image}
-							style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '3rem' }}
-						/>
+						<img src={slide.image}/>
 					</SwiperSlide>
 				))}
 			</Swiper>

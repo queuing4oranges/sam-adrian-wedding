@@ -1,13 +1,8 @@
 @use '../../../variables.scss' as vars;
 
 .countdown-container {
-	&.animated-countdown {
-		animation: slideInFromRight 3s ease-out;
-		max-width: 100%;
-	}
-
 	.countdown-cube {
-		border: vars.$turq-light dotted 3px;
+		border: vars.$secondary-bg dotted 10px;
 		padding: 1.5rem;
 		margin: 0.5rem;
 		display: flex;
@@ -18,7 +13,7 @@
 		& p {
 			margin: 0;
 			font-weight: bolder;
-			color: vars.$secondary-bg;
+			color: white;
 			font-family: "Roboto Mono", serif, Arial, sans-serif;
 		}
 

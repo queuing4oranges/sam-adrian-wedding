@@ -1,0 +1,54 @@
+.wavy-heading-container text {
+	font-size: 3rem;
+	fill: white;
+	text-shadow: 
+		0 0 10px rgba(0, 255, 255, 0.8),
+		0 0 20px rgba(0, 255, 255, 0.6),
+		0 0 30px rgba(0, 255, 255, 0.4);
+	font-weight: bold;
+	font-family: "Libre Baskerville", serif;
+	transition: text-shadow 0.3s ease-in-out;
+}
+
+.wavy-heading-container text:hover {
+	text-shadow: 	
+		0 0 15px rgba(0, 255, 255, 1), 
+		0 0 30px rgba(0, 255, 255, 0.9),
+		0 0 45px rgba(0, 255, 255, 0.7);
+}
+
+/* Desktops (1200px and below) */
+@media (max-width: 1200px) {
+	text {
+		font-size: 2.5rem !important;
+	}
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	text {
+		font-size: 2rem !important;
+	}
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	text {
+		font-size: 2rem !important;
+	}
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+	text {
+		font-size: 1.5rem !important;
+	}
+}
+
+/* Extra Small Screens (400px and below) */
+@media (max-width: 400px) {
+	text {
+		font-size: 5rem !important;
+		text-wrap: wrap !important;
+	}
+}

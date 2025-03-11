@@ -4,42 +4,6 @@
 	h1 {
 		color: vars.$turq-dark-dark;
 	}
-
-	.doodle-span {
-		svg {
-			width: 30rem;
-			height: auto;
-			display: flex !important;
-			justify-content: center !important;
-			align-items: center !important;
-		}
-	}
-
-	.rsvp-btn {
-		font-size: 4rem;
-		padding: 3rem;
-		background-color: vars.$turq-light-light;
-
-		a {
-			color: unset;
-		}
-	}
-
-	.chevron-container {
-		display: flex;
-	}
-
-	.chevron {
-		font-size: 1.5rem;
-		opacity: 0;
-		animation: flicker 1s infinite alternate;
-	}
-
-	@keyframes flicker {
-		0% { opacity: 0; transform: translateX(0); }
-		50% { opacity: 1; transform: translateX(-5px); }
-		100% { opacity: 0; transform: translateX(-10px); }
-	}
 }
 
 

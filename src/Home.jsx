@@ -7,6 +7,7 @@ import Details from './components/details/Details';
 import Itinerary from './components/itinerary/Itinerary';
 import Faq from './components/faq/Faq';
 import Travel from './components/travel/Travel';
+import Rsvp from './components/rsvp/Rsvp';
 
 export default function Home() {
     const location = useLocation();
@@ -66,6 +67,7 @@ export default function Home() {
 			<section id='itinerary'><Itinerary /></section>
 			<section id='travel'><Travel /></section>
 			<section id='faq'><Faq /></section>
+			<section id='rsvp'><Rsvp /></section>
 		</div>
 	);
 }
