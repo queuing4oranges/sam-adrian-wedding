@@ -11,3 +11,9 @@
 	width: 80rem !important;
 	height: 60rem;
 }
+
+.prev-span, .next-span {
+	color: vars.$white;
+	font-weight: bolder;
+	cursor: pointer;
+}

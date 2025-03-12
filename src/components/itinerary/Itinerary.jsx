@@ -23,6 +23,7 @@ export default function Itinerary() {
 					setShowMore={setShowMore}
 					schedule={schedule}
 					selectedDay={selectedDay}
+					setSelectedDay={setSelectedDay}
 				/>
 			:
 				<ScheduleInfo

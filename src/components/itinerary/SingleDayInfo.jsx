@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
 	Row, Col, Card, CardBody, Button,
 	Modal, ModalBody, ModalFooter
@@ -8,29 +8,62 @@ import Xicon from '../../assets/svgs/Xicon.jsx';
 
 import './singledayinfo.scss';
 
-export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
-	const { day, date, title, description, note, imageUrl, inspirationUrl } = schedule[selectedDay - 1];
+export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setSelectedDay }) {
 	const [modal, setModal] = useState(false);
-	
+	const [currentDay, setCurrentDay] = useState(null);
+
 	const toggle = () => setModal(!modal);
+
+	// Ensure selectedDay is within the valid range and update currentDay accordingly
+	useEffect(() => {
+		// If selectedDay is out of bounds, reset it to the first valid day
+		const validDay = Math.max(1, Math.min(selectedDay, schedule.length));
+		setSelectedDay(validDay);
+	}, [selectedDay, schedule.length, setSelectedDay]);
+
+	useEffect(() => {
+		const current = schedule[selectedDay - 1];
+		setCurrentDay(current);
+	},[selectedDay, schedule]);
+
+	const { day, date, title, description, note, imageUrl, inspirationUrl } = currentDay || {};
+
+	const handleNextDay = () => {
+		if (selectedDay < schedule.length) {
+			setSelectedDay(selectedDay + 1);
+		} else {
+			return null;
+		}
+	}
+
+	const handlePrevDay = () => {
+		if (selectedDay > 1) {
+			setSelectedDay(selectedDay - 1);
+		}
+	}
 
 	return (
 		<Row className='card-container w-100'>
 			<Col xs={12} lg={6} className='w-100 d-flex flex-column justify-content-center align-items-center'>
-				{!modal ? <>
-					<span
-						onClick={() => setShowMore(false)}
-						className='close-x d-flex justify-content-end pb-3'
-						title='Close'
-					>
-						<Xicon
-							width={30}
-							height={30}
-							color='#164443'
-							className='xicon'
-						/>
+				{!modal ?
+				<div className='d-flex'>
+					<span className='prev-span d-flex align-items-center' style={{ height: '40rem'}} onClick={handlePrevDay}>
+						<i className='bi bi-caret-left'/>
+						<span className='me-3'>PREV</span>
 					</span>
-					<Card className='p-5' style={{ height: '40rem', width: '60rem'}}>
+					<Card className='px-5 py-2' style={{ height: '40rem', width: '60rem'}}>
+						<span
+							onClick={() => setShowMore(false)}
+							className='close-x pb-3 pt-4 d-flex justify-content-end'
+							title='Close'
+						>
+							<Xicon
+								width={30}
+								height={30}
+								color='#164443'
+								className='xicon'
+							/>
+						</span>
 						<div
 							className='show-bg'
 							style={{ backgroundImage: `url(${imageUrl})`}}>
@@ -48,7 +81,11 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
 							}
 						</CardBody>
 					</Card>
-				</>
+					<span className='next-span d-flex align-items-center' style={{ height: '40rem'}} onClick={handleNextDay}>
+						<span className='ms-3'>NEXT</span>
+						<i className='bi bi-caret-right'/>
+					</span>
+					</div>
 				: <FotoModal inspirationUrl={inspirationUrl} toggle={toggle} modal={modal} />
 				}
 			</Col>
