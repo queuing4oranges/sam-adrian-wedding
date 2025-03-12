@@ -15,8 +15,8 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
 	const toggle = () => setModal(!modal);
 
 	return (
-		<Row className='w-100 w-lg-50 card-container'>
-			<Col xs={12} lg={6} className='d-flex flex-column justify-content-center'>
+		<Row className='card-container w-100'>
+			<Col xs={12} lg={6} className='w-100 d-flex flex-column justify-content-center align-items-center'>
 				{!modal ? <>
 					<span
 						onClick={() => setShowMore(false)}
@@ -30,15 +30,15 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay }) {
 							className='xicon'
 						/>
 					</span>
-					<Card>
+					<Card className='p-5' style={{ height: '40rem', width: '60rem'}}>
 						<div
 							className='show-bg'
 							style={{ backgroundImage: `url(${imageUrl})`}}>
 						</div>
 						<CardBody>
-							<h3 className='mb-5'>Day {day} - {date}</h3>
-							<h1 className='mb-5'>{title}</h1>
-							<p className='fw-bold mb-3'>{description}</p>
+							<h4 className='mb-5'>Day {day} - {date}</h4>
+							<h3 className='mb-5'>{title}</h3>
+							<p className='fw-semibold mb-3'>{description}</p>
 							<p>{note}</p>
 							{inspirationUrl &&
 								<Button color='info' onClick={toggle} className='d-flex'>

@@ -7,14 +7,20 @@
 		gap: 2rem;
 	}
 
-	justify-content: center;
 	.itinerary-card {
 		width: 20rem;
 		height: 20rem;
-		background-color: vars.$yellow;
+		background-color: vars.$white;
 		color: vars.$turq-dark-dark;
+		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			animation: wiggle 0.3s ease-in-out;
+			cursor: pointer;
+		}
 	}
-	
+
 	.show-bg {
 		content: '';
 		position: absolute;
@@ -44,6 +50,14 @@
 			color: vars.$turq-light-light;
 		}
 	}
+}
+
+@keyframes wiggle {
+	0% { transform: rotate(0deg); }
+	25% { transform: rotate(2deg) translateX(2px); }
+	50% { transform: rotate(-2deg) translateX(-2px); }
+	75% { transform: rotate(2deg) translateX(2px); }
+	100% { transform: rotate(0deg); }
 }
 
 /* Large Tablets (992px and below) */

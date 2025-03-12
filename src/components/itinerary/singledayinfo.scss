@@ -3,5 +3,11 @@
 .close-x {
 	svg polygon:hover {
 		fill: vars.$turq-light;
+		cursor: pointer;
 	}
+}
+
+.single-day-column {
+	width: 80rem !important;
+	height: 60rem;
 }

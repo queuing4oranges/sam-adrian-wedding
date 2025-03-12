@@ -59,7 +59,7 @@ export const itineraryData = [
 		day: "4",
 		date: "Thursday, Sept 11",
 		title: "Themed party: Go hard or go home with your best Shrek-inspired outfits!",
-		description:"For our Shrek costume party, you're welcome to dress up as any character you love—none are off-limits! Adrian has chosen to go as Lord Farquaad, and Sam will be Princess Fiona. Don't worry about duplicates—we're more than happy to have multiple versions of the same costume. Feel free to pick any character that inspires you! We're so excited to see everyone's creative interpretations. Here's a reminder of some fun options: Donkey, Puss in Boots, Dragon, Gingy, the Three Blind Mice, the Three Little Pigs, Big Bad Wolf, Muffin Man, Magic Mirror, and so many more!",
+		description:"For our Shrek costume party, you're welcome to dress up as any character you love—none are off-limits! Adrian has chosen to go as Lord Farquaad, and Sam will be Princess Fiona. Don't worry about duplicates—we're more than happy to have multiple versions of the same costume. Feel free to pick any character that inspires you!",
 		note: "Dressing up is mandatory! You can reference the photos for inspiration, and there will even be a competition.",
 		imageUrl: costume,
 		inspirationUrl: [shrek01, shrek02, shrek03]
