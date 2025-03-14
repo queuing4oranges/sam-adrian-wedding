@@ -11,10 +11,12 @@
 
 		&:hover {
 			background-color: vars.$turq-light-light;
+			color: vars.$white;
 		}
 
 		&.active-btn {
 			background-color: vars.$turq-light-light;
+			color: vars.$white;
 		}
 	}
 
@@ -32,6 +34,10 @@
 
 	.swiper-slide {
 		height: auto; // Make all cards same height, regardless of content
+	}
+
+	.swiper-button-next:after, .swiper-button-prev:after {
+		color: vars.$turq-light-light;
 	}
 }
 

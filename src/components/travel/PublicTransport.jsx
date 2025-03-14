@@ -4,9 +4,9 @@ import Xicon from '../../assets/svgs/Xicon';
 
 export default function PublicTransport({ setShowMhd }) {
 	return (
-		<CardBody>
+		<CardBody className='border'>
 			<div className='d-flex justify-content-between'>
-				<h3 className='mb-5'>Prague Public Transport</h3>
+				<h3 className='mb-3'>Prague Public Transport</h3>
 				<span
 					onClick={() => setShowMhd(false)}
 					className='close-x d-flex justify-content-end pe-0'

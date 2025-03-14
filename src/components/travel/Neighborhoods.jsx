@@ -10,7 +10,7 @@ import { mapData } from './mapData';
 import Xicon from '../../assets/svgs/Xicon';
 
 export default function Neighborhoods({ setShowHoods }) {
-	const [isMobile, setIsMobile] = useState(3); // 1: mobile, 2: tablet, 3: desktop
+	const [isMobile, setIsMobile] = useState(2); // 1: mobile, 2: tablet, 3: desktop
 	const innerWidth = window.innerWidth;
 
 	// Handles amount of slides to be shown based on screen width
@@ -29,7 +29,7 @@ export default function Neighborhoods({ setShowHoods }) {
 	}, [innerWidth]);
 
 	return (
-		<CardBody>
+		<CardBody className='border'>
 			<div className='d-flex justify-content-between'>
 				<h3 className='mb-5'>Get to know the neighborhoods</h3>
 				<span
