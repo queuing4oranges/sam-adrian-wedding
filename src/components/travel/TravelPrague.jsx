@@ -7,7 +7,7 @@ import PublicTransport from './PublicTransport.jsx';
 
 export default function TravelPrague({ showHoods, setShowHoods, showMhd, setShowMhd }) {
 	return (
-		<Card className='prague-info-card'>
+		<Card className='border-0 prague-info-card'>
 			{showHoods 
 				? <Neighborhoods setShowHoods={setShowHoods} />
 				: showMhd

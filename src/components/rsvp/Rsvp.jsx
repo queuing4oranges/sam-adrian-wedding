@@ -86,7 +86,7 @@ export default function Rsvp() {
 					</Col>
 					<Col xs='12' sm='12' md='4' className='rsvp-btn-column p-2 p-sm-3 p-md-4 p-lg-5'>
 						<p className='mb-5'>
-							Please RSVP by <strong>August, 10 </strong>to help us finalize arrangements. <br /> Incase you missed it above here, again, the RSVP form.
+							Please RSVP by <strong>August, 10 </strong>to help us finalize arrangements. <br /> In case you missed it above here, again, the RSVP form.
 						</p>
 						<div className='d-flex justify-content-center pb-5'>
 							<button className='button-55 rsvp-btn' role='button'>

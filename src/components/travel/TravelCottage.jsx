@@ -10,7 +10,7 @@ export default function TravelCottage() {
 	const accomodationImages = [accomm3, accomm4, accomm5, accomm6, accomm7];
 
 	return (
-		<Card className='cottage-info-card'>
+		<Card className='border-0 cottage-info-card'>
 			<CardBody>
 				<h3>Accommodation in the Cottage</h3>
 				<Row>
