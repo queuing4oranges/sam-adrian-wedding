@@ -7,6 +7,9 @@
 	}
 
 	.hoods-container {
+		.hoods-title  {
+			color: vars.$turq-dark-dark;
+		}
 		p, h3 {
 			color: vars.$white;
 		}

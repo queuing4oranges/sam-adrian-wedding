@@ -58,7 +58,7 @@ export default function Rsvp() {
 	return (
 		<Container
 			fluid
-			className='rsvp-container min-vh-100 w-100 p-5'
+			className='rsvp-container min-vh-100 w-75 px-3 pt-3 d-flex flex-column justify-content-between'
 			id='rsvp'
 		>
 			<Row className='pt-5'>
@@ -70,7 +70,7 @@ export default function Rsvp() {
 						<LayingDoodle />
 					</span>
 				</Row>
-				<Row>
+				<Row className='rsvp-row-container'>
 					<Col xs='12' sm='12' md='4' className='email-column p-2 p-sm-3 p-md-4 p-lg-5'>
 						<p>
 							Feel free to contact us if you have additional questions.
@@ -78,14 +78,16 @@ export default function Rsvp() {
 						<div className='btn-wrapper'>
 							<span className='span-container'>
 								<span className='mb-5'>
-									<i className='pe-2 bi bi-envelope-heart' />
-									Email us!
+									<a href='mailto: barriga.samantha@gmail.com' aria-label='Email address' className='text-decoration-none' style={{ color: 'inherit'}}>
+										<i className='pe-2 bi bi-envelope-heart' />
+										Email us!
+									</a>
 								</span>
 							</span>
 						</div>
 					</Col>
 					<Col xs='12' sm='12' md='4' className='rsvp-btn-column p-2 p-sm-3 p-md-4 p-lg-5'>
-						<p className='mb-5'>
+						<p className='mb-4'>
 							Please RSVP by <strong>August, 10 </strong>to help us finalize arrangements. <br /> In case you missed it above here, again, the RSVP form.
 						</p>
 						<div className='d-flex justify-content-center pb-5'>
@@ -107,7 +109,7 @@ export default function Rsvp() {
 						</span>
 
 						<div
-							className='btn-wrapper float-end'
+							className='btn-wrapper'
 							onClick={() => handleAddToCalendar()}
 						>
 							<span className='span-container'>
