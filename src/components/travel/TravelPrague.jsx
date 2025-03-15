@@ -1,5 +1,5 @@
 import { Card, CardBody, Col, Row } from 'reactstrap';
-import map from '../../../src/assets/images/prague-map.png';
+import map from '/assets/images/prague-map.png';
 
 import './travel.scss';
 import Neighborhoods from './Neighborhoods.jsx';

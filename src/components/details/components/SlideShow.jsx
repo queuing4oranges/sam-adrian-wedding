@@ -10,12 +10,12 @@ import './slideshow.scss';
 export default function SlideShow() {
 	// Images for slider component
 	const slides = [
-		{ id: 1, image: '../../src/assets/sam-and-adrian/1.png' },
-		{ id: 2, image: '../../src/assets/sam-and-adrian/2.png' },
-		{ id: 3, image: '../../src/assets/sam-and-adrian/3.png' },
-		{ id: 4, image: '../../src/assets/sam-and-adrian/4.png' },
-		{ id: 5, image: '../../src/assets/sam-and-adrian/5.png' },
-		{ id: 6, image: '../../src/assets/sam-and-adrian/6.png' },
+		{ id: 1, image: '/assets/sam-and-adrian/1.png' },
+		{ id: 2, image: '/assets/sam-and-adrian/2.png' },
+		{ id: 3, image: '/assets/sam-and-adrian/3.png' },
+		{ id: 4, image: '/assets/sam-and-adrian/4.png' },
+		{ id: 5, image: '/assets/sam-and-adrian/5.png' },
+		{ id: 6, image: '/assets/sam-and-adrian/6.png' },
 	];
 
 	return (

@@ -1,11 +1,13 @@
 @use '../../../src/variables.scss' as vars;
 
 .faq-container {
+	background-image: url('../../assets/svgs/faq-bg.svg');
+	background-size: cover;
+	background-attachment: fixed;
 	h1 {
 		color: vars.$turq-dark-dark;
 	}
 }
-
 
 .btn-wrapper {
 	.span-container {

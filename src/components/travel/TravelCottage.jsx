@@ -1,10 +1,10 @@
 import { Card, CardBody, Row, Col } from 'reactstrap';
 
-import accomm3 from '../../assets/cottage/accomm3.png';
-import accomm4 from '../../assets/cottage/accomm4.png';
-import accomm5 from '../../assets/cottage/accomm5.png';
-import accomm6 from '../../assets/cottage/accomm6.png';
-import accomm7 from '../../assets/cottage/accomm7.png';
+import accomm3 from '/assets/cottage/accomm3.png';
+import accomm4 from '/assets/cottage/accomm4.png';
+import accomm5 from '/assets/cottage/accomm5.png';
+import accomm6 from '/assets/cottage/accomm6.png';
+import accomm7 from '/assets/cottage/accomm7.png';
 
 export default function TravelCottage() {
 	const accomodationImages = [accomm3, accomm4, accomm5, accomm6, accomm7];

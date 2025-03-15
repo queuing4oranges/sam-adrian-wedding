@@ -1,11 +1,11 @@
-import malastrana from "../../assets/hoods/malastrana.png";
-import karlin from "../../assets/hoods/karlin.png";
-import letna from "../../assets/hoods/letna.png";
-import newtown from "../../assets/hoods/newtown.png";
-import oldtown from "../../assets/hoods/oldtown.png";
-import smichov from "../../assets/hoods/smichov.png";
-import vinohrady from "../../assets/hoods/vinohrady.png";
-import zizkov from "../../assets/hoods/zizkov.png";
+import malastrana from "/assets/hoods/malastrana.png";
+import karlin from "/assets/hoods/karlin.png";
+import letna from "/assets/hoods/letna.png";
+import newtown from "/assets/hoods/newtown.png";
+import oldtown from "/assets/hoods/oldtown.png";
+import smichov from "/assets/hoods/smichov.png";
+import vinohrady from "/assets/hoods/vinohrady.png";
+import zizkov from "/assets/hoods/zizkov.png";
 
 export const mapData = [
 	{

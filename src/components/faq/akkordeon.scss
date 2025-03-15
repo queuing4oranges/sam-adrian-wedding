@@ -15,7 +15,7 @@
 
 .box {
 	position: relative;
-	background: white;
+	background: vars.$white;
 	height: 7rem;
 	transition: all .15s ease-in-out;
 }
@@ -40,10 +40,13 @@
 	justify-content: start;
 	align-items: center;
 	cursor: pointer;
-	background-color: vars.$turq-dark-dark;
+	background-color: vars.$turq-dark;
 	color: white;
 	margin-top: 1rem;
 	text-align: center;
+	&:hover {
+		opacity: 0.9;
+	}
 }
 
 .box-content {
@@ -53,6 +56,27 @@
 	ul {
 		padding-left: 0;
 	}
+}
+
+.accordion input[type='checkbox'] {
+	display: none;
+}
+
+/* Default state: Show "envelope" icon, hide "envelope open" icon */
+.bi-envelope-heart {
+	display: inline;
+}
+.bi-envelope-open-heart {
+	display: none;
+	opacity: 0.7;
+}
+
+/* When checked (open), show "envelope open" icon and hide "envelope" icon */
+input[type="checkbox"]:checked + .box label .bi-envelope-heart {
+	display: none;
+}
+input[type="checkbox"]:checked + .box label .bi-envelope-open-heart {
+	display: inline;
 }
 
 input:checked + .box {
