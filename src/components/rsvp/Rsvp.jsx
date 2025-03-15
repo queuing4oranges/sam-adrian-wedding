@@ -101,12 +101,13 @@ export default function Rsvp() {
 						</div>
 					</Col>
 					<Col xs='12' sm='12' md='4' className='calendar-column p-2 p-sm-3 p-md-4 p-lg-5'>
-						<p>
-							Join us in celebrating!
-							Save the date to your calendar.
-						</p>
+						<span className='text-end'>
+							<p className='mb-0'>Join us in celebrating!</p>
+							<p>Save the date to your calendar.</p>
+						</span>
+
 						<div
-							className='btn-wrapper'
+							className='btn-wrapper float-end'
 							onClick={() => handleAddToCalendar()}
 						>
 							<span className='span-container'>
