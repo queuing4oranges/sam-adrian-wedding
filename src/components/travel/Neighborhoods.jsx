@@ -29,7 +29,7 @@ export default function Neighborhoods({ setShowHoods }) {
 	}, [innerWidth]);
 
 	return (
-		<CardBody className='border'>
+		<CardBody className='border hoods-container'>
 			<div className='d-flex justify-content-between'>
 				<h3 className='mb-5'>Get to know the neighborhoods</h3>
 				<span

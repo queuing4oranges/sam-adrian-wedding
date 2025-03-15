@@ -1,10 +1,21 @@
 @use '../../../src/variables.scss' as vars;
 
 .travel-container {
+	color: vars.$turq-dark-dark;
+	p, h3 {
+		color: vars.$turq-dark-dark;
+	}
+
+	.hoods-container {
+		p, h3 {
+			color: vars.$white;
+		}
+	}
+
 	.round-title {
 		border: none;
 		color: #164443;
-		background-color: white;
+		background-color: vars.$white;
 		height: 8rem;
 		width: 8rem;
 		border-radius: 50%;
