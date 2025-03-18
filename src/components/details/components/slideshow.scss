@@ -1,6 +1,12 @@
 @use '../../../variables.scss' as vars;
 
 .slider-container {
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	.swiper-pagination {
 		display: flex;
 		justify-content: end;
@@ -25,6 +31,19 @@
 			&:last-child {
 				margin-right: 2rem;
 			}
+		}
+	}
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	.slider-container {
+		.swiper-pagination-clickable .swiper-pagination-bullet {
+			display: none;
+		}
+		.swiper-slide img {
+			width: 100%;
+			height: auto;
 		}
 	}
 }
