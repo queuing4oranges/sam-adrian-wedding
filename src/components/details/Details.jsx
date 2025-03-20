@@ -11,19 +11,19 @@ export default function Details() {
 
 	return (
 		<Container fluid className='details-container w-100 min-vh-100 py-5 px-0 d-flex align-items-center'>
-			<Row className='details-row w-100 h-75 m-0 p-0'>
-				<Col md='5' className='d-flex justify-content-center p-0 position-relative'>
+			<Row className='details-row w-100 m-0 p-0'>
+				<Col xs='12' lg='5' md='5' className='d-flex justify-content-center p-0'>
 					<SlideShow />
 				</Col>
-				<Col md='7' className='p-3 d-flex flex-column justify-content-center'>
+				<Col xs='12' lg='7' md='7' className='h-100 p-3 d-flex flex-column justify-content-center'>
 					<WavyHeading />
 					<CountdownTimer targetDate={targetDate}/>
-					<span className='details-text'>
-						<p className='text-left text-center m-0'>
+					<span>
+						<p className='text-center m-0'>
 							<i className='bi bi-airplane me-2'/>
 							Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday.
 						</p>
-						<p className='text-right text-center'>
+						<p className='text-center'>
 							Experience Prague, a cozy cottage in the woods, and themed parties with friends.
 							<i className='bi bi-balloon-heart' />
 						</p>

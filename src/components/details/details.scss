@@ -2,67 +2,27 @@
 
 .details-container {
 	background-image: url('../../assets/svgs/patternpad-bg.svg');
-	& h1 {
-		font-size: 3rem !important;
-	}
 
 	& .bi-airplane::before {
 		transform: rotate(45deg);
 	}
 
 	.details-row {
-		max-height: 40rem;
+		height: 75%;
 		background-color: vars.$turq-dark;
-		color: white;
+		color: vars.$white;
 	}
 }
 
 /* Large Tablets (992px and below) */
 @media (max-width: 992px) {
 	.details-container {
-		h1 {
-			font-size: 3.5rem;
-		}
-	}
-}
+		display: flex;
+		flex-direction: column;
 
-/* Tablets & Small Laptops (768px and below) */
-@media (max-width: 768px) {
-	.details-container {
-		h1 {
-			display: flex;
-			flex-direction: column;
-			font-size: 1.75rem !important;
-		}
-		.text-left, .text-right {
-			background-size: 100% 100%;
-			color: white;
-			line-height: 1.2;
-		}
-		.text-left {
-			background-image: url('../../assets/svgs/blue-paint-opaque.svg');
+		.details-row {
+			height: 100%;
 		}
 
-		.text-right {
-			background-image: url('../../assets/svgs/orange-paint-opaque.svg');
-		}
-	}
-}
-
-/* Mobile Devices (576px and below) */
-@media (max-width: 576px) {
-	.details-container {
-		h1 {
-			font-size: 1.5rem;
-		}
-	}
-}
-
-/* Extra Small Screens (400px and below) */
-@media (max-width: 400px) {
-	.details-container {
-		h1 {
-			font-size: 1rem;
-		}
 	}
 }
