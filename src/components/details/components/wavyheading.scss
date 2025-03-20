@@ -1,6 +1,8 @@
+@use '../../../variables.scss' as vars;
+
 .wavy-heading-container text {
-	font-size: 3rem;
-	fill: white;
+	font-size: 3.5rem;
+	fill: vars.$white;
 	text-shadow: 
 		0 0 10px rgba(0, 255, 255, 0.8),
 		0 0 20px rgba(0, 255, 255, 0.6),
@@ -17,38 +19,26 @@
 		0 0 45px rgba(0, 255, 255, 0.7);
 }
 
-/* Desktops (1200px and below) */
-@media (max-width: 1200px) {
-	text {
-		font-size: 2.5rem !important;
-	}
+.mobile-text {
+	display: none;
 }
 
 /* Large Tablets (992px and below) */
 @media (max-width: 992px) {
-	text {
-		font-size: 2rem !important;
+	.desktop-text {
+		display: none;
 	}
+
+	.mobile-text {
+		display: block;
+	}
+
 }
 
 /* Tablets & Small Laptops (768px and below) */
 @media (max-width: 768px) {
-	text {
-		font-size: 2rem !important;
-	}
-}
-
-/* Mobile Devices (576px and below) */
-@media (max-width: 576px) {
-	text {
-		font-size: 1.5rem !important;
-	}
-}
-
-/* Extra Small Screens (400px and below) */
-@media (max-width: 400px) {
-	text {
-		font-size: 5rem !important;
-		text-wrap: wrap !important;
+	.wavy-heading-container text {
+		font-size: 5rem;
+		line-height: 2;
 	}
 }
