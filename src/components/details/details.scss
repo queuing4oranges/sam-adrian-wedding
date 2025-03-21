@@ -12,6 +12,32 @@
 		background-color: vars.$turq-dark;
 		color: vars.$white;
 	}
+
+	.details-heading {
+		display: flex;
+		span {
+			font-family: "Playfair Display", serif, Arial, Helvetica, sans-serif;
+		}
+	}
+
+	.glowing-heading {
+		font-size: 2.5rem;
+		fill: vars.$white;
+		text-shadow:
+			0 0 10px rgba(0, 255, 255, 0.8),
+			0 0 20px rgba(0, 255, 255, 0.6),
+			0 0 30px rgba(0, 255, 255, 0.4);
+		font-weight: bold;
+		font-family: "Libre Baskerville", serif;
+		transition: text-shadow 0.3s ease-in-out;
+	}
+
+	.glowing-heading:hover {
+		text-shadow:
+			0 0 15px rgba(0, 255, 255, 1),
+			0 0 30px rgba(0, 255, 255, 0.9),
+			0 0 45px rgba(0, 255, 255, 0.7);
+	}
 }
 
 /* Large Tablets (992px and below) */
@@ -24,5 +50,31 @@
 			height: 100%;
 		}
 
+	}
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	.details-heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 2rem;
+		.dash-span {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			max-height: 2rem;
+		}
+	}
+
+}
+
+/* Mobile Devices (500px and below) */
+@media (max-width: 500px) {
+	.details-heading {
+		span {
+			font-size: 2rem;
+		}
 	}
 }

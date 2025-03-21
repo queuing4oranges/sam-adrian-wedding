@@ -2,7 +2,6 @@ import { Container, Row, Col } from 'reactstrap';
 
 import CountdownTimer from './components/CountdownTimer.jsx';
 import SlideShow from './components/SlideShow.jsx';
-import WavyHeading from './components/WavyHeading.jsx';
 
 import './details.scss';
 
@@ -15,10 +14,14 @@ export default function Details() {
 				<Col xs='12' lg='5' md='5' className='d-flex justify-content-center p-0'>
 					<SlideShow />
 				</Col>
-				<Col xs='12' lg='7' md='7' className='h-100 p-3 d-flex flex-column justify-content-center'>
-					<WavyHeading />
+				<Col xs='12' lg='7' md='7' className='p-0 p-md-5 d-flex flex-column justify-content-center align-items-center'>
+					<div className='details-heading glowing-heading mt-3'>
+						<span>Monday September 8</span>
+						<span className='mx-2 dash-span'>-</span>
+						<span>Friday, September 12</span>
+					</div>
 					<CountdownTimer targetDate={targetDate}/>
-					<span>
+					<span className='p-3'>
 						<p className='text-center m-0'>
 							<i className='bi bi-airplane me-2'/>
 							Monday mandatory for the friends flying in, for the Prague locals we will begin Tuesday.

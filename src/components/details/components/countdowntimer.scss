@@ -145,6 +145,14 @@
 	}
 }
 
+/* Mobile Devices (500px and below) */
+@media (max-width: 500px) {
+	.countdown-container {
+		margin: 0;
+		display: flex;
+	}
+}
+
 @keyframes glow {
 	0%, 100% {
 		box-shadow: 0 0 5px vars.$turq-light;
