@@ -10,27 +10,28 @@ import { mapData } from './mapData';
 import Xicon from '../../assets/svgs/Xicon';
 
 export default function Neighborhoods({ setShowHoods }) {
-	const [isMobile, setIsMobile] = useState(2); // 1: mobile, 2: tablet, 3: desktop
-	const innerWidth = window.innerWidth;
+	const [isMobile, setIsMobile] = useState(2); // 1: mobile, 2: desktop
 
 	// Handles amount of slides to be shown based on screen width
 	useEffect(() => {
 		const handleResize = () => {
-			if (window.innerWidth >= 1200) {
+			if (window.innerWidth >= 992) {
 				setIsMobile(2);  // Desktop
 			} else {
 				setIsMobile(1);  // Mobile
 			}
 		}
 
+		handleResize();
+
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 
-	}, [innerWidth]);
+	}, []);
 
 	return (
 		<CardBody className='border hoods-container'>
-			<div className='d-flex justify-content-between'>
+			<div className='hoods-title-container d-flex justify-content-between'>
 				<h3 className='hoods-title mb-5'>Get to know the neighborhoods</h3>
 				<span
 					onClick={() => setShowHoods(false)}
@@ -49,14 +50,14 @@ export default function Neighborhoods({ setShowHoods }) {
 				<Swiper
 					modules={[Pagination, Navigation]}
 					spaceBetween={20}
-					slidesPerView={isMobile}
+					slidesPerView={isMobile === 2 ? 2 : 1}
 					navigation
 					loop={true}
 				>
 					{mapData.map((map, idx) => (
 						<SwiperSlide key={idx} className='d-flex align-items-stretch'>
 							<Card
-								className='p-5 h-100 d-flex flex-column justify-content-end text-white position-relative'
+								className='hoods-card-container p-3 p-md-4 p-lg-5 h-100 d-flex flex-column justify-content-end text-white position-relative'
 								style={{
 									backgroundImage: `url(${map?.imgUrl})`,
 									backgroundSize: 'cover',
