@@ -47,11 +47,11 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 			<Col xs={12} lg={6} className='w-100 d-flex flex-column justify-content-center align-items-center'>
 				{!modal ?
 				<div className='d-flex'>
-					<span className='prev-span d-flex align-items-center' style={{ height: '40rem'}} onClick={handlePrevDay}>
+					<span className='prev-span' onClick={handlePrevDay}>
 						<i className='bi bi-caret-left'/>
 						<span className='me-3'>PREV</span>
 					</span>
-					<Card className='px-5 py-2' style={{ height: '40rem', width: '60rem'}}>
+					<Card className='single-day-info-card p-2 p-md-4 p-lg-5'>
 						<span
 							onClick={() => setShowMore(false)}
 							className='close-x pb-3 pt-4 d-flex justify-content-end'
@@ -68,10 +68,10 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 							className='show-bg'
 							style={{ backgroundImage: `url(${imageUrl})`}}>
 						</div>
-						<CardBody>
-							<h4 className='mb-5'>Day {day} - {date}</h4>
-							<h3 className='mb-5'>{title}</h3>
-							<p className='fw-semibold mb-3'>{description}</p>
+						<CardBody className='p-3 p-md-5'>
+							<h4 className='mb-3 mb-md-5'>Day {day} - {date}</h4>
+							<h3 className='mb-3 mb-md-5'>{title}</h3>
+							<p className='fw-semibold mb-2 mb-md-3'>{description}</p>
 							<p>{note}</p>
 							{inspirationUrl &&
 								<Button color='info' onClick={toggle} className='d-flex'>
@@ -81,7 +81,7 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 							}
 						</CardBody>
 					</Card>
-					<span className='next-span d-flex align-items-center' style={{ height: '40rem'}} onClick={handleNextDay}>
+					<span className='next-span' onClick={handleNextDay}>
 						<span className='ms-3'>NEXT</span>
 						<i className='bi bi-caret-right'/>
 					</span>

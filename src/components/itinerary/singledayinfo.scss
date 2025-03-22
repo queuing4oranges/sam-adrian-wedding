@@ -13,7 +13,38 @@
 }
 
 .prev-span, .next-span {
-	color: vars.$white;
+	color: vars.$turq-dark-dark;
 	font-weight: bolder;
+	font-size: xx-large;
 	cursor: pointer;
+	height: 40rem;
+	display: flex;
+	align-items: center;
+}
+
+.single-day-info-card {
+	height: 40rem;
+	width: 60rem;
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	.single-day-info-card {
+		height: unset;
+		width: unset;
+		padding: 0;
+	}
+
+	.prev-span,
+	.next-span {
+		display: none;
+	}
+}
+
+/* Tablets & Small Laptops (768px and below) */
+@media (max-width: 768px) {
+	.prev-span,
+	.next-span {
+		display: none;
+	}
 }
