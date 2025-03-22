@@ -1,6 +1,8 @@
-import { CardBody, Row, Col } from 'reactstrap';
+import { CardBody, Row, Col, Button } from 'reactstrap';
 
 import Xicon from '../../assets/svgs/Xicon';
+
+import './travel.scss';
 
 export default function PublicTransport({ setShowMhd }) {
 	return (
@@ -49,6 +51,9 @@ export default function PublicTransport({ setShowMhd }) {
 						Unfortunately, overcharging tourists is still a common issue with some Prague taxi drivers. Avoid hailing taxis from the street—use Uber, Bolt etc. If you must take a regular taxi, always ask for the estimated fare in advance and make sure the meter is running.
 					</p>
 				</Col>
+				<div className='transport-btn'>
+					<Button color='info' className='float-end' onClick={() => setShowMhd(false)}>Close</Button>
+				</div>
 			</Row>
 		</CardBody>
 	)
