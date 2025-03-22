@@ -29,7 +29,6 @@ export default function Akkordeon() {
 					<span className='d-flex align-items-center'>
 						<p className='m-0 me-2'>
 							Use our RSVP Form
-							<i className='bi bi-arrow-right-short' />
 						</p>
 						<button className='button-55 faq-rsvp-btn' role='button'>
 							<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none text-dark'>
