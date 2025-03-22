@@ -25,6 +25,15 @@
 .single-day-info-card {
 	height: 40rem;
 	width: 60rem;
+
+	h3 {
+		color: vars.$turq-light-light;
+		font-weight: 700;
+	}
+}
+
+.single-day-description {
+	font-weight: bolder;
 }
 
 /* Large Tablets (992px and below) */
@@ -33,6 +42,15 @@
 		height: unset;
 		width: unset;
 		padding: 0;
+
+		.single-day-description {
+			line-height: 1.2;
+			font-weight: 600;
+		}
+
+		.single-day-note {
+			line-height: 1.3;
+		}
 	}
 
 	.prev-span,

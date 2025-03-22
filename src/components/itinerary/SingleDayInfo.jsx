@@ -54,7 +54,7 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 					<Card className='single-day-info-card p-2 p-md-4 p-lg-5'>
 						<span
 							onClick={() => setShowMore(false)}
-							className='close-x pb-3 pt-4 d-flex justify-content-end'
+							className='close-x d-flex justify-content-end'
 							title='Close'
 						>
 							<Xicon
@@ -69,10 +69,10 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 							style={{ backgroundImage: `url(${imageUrl})`}}>
 						</div>
 						<CardBody className='p-3 p-md-5'>
-							<h4 className='mb-3 mb-md-5'>Day {day} - {date}</h4>
+							<p className='single-day-date mb-3 mb-md-5 fw-semibold'>Day {day} - {date}</p>
 							<h3 className='mb-3 mb-md-5'>{title}</h3>
-							<p className='fw-semibold mb-2 mb-md-3'>{description}</p>
-							<p>{note}</p>
+							<p className='single-day-description mb-2 mb-md-3'>{description}</p>
+							<p className='single-day-note'>{note}</p>
 							{inspirationUrl &&
 								<Button color='info' onClick={toggle} className='d-flex'>
 									<i className='bi bi-card-image me-2' />
