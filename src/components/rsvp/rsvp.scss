@@ -30,8 +30,11 @@
 			color: unset;
 		}
 	}
-}
 
+	.calendar-column {
+		text-align: end;
+	}
+}
 
 .btn-wrapper {
 	.span-container {
@@ -68,7 +71,7 @@
 	}
 
 	.span-container:hover{
-		color: vars.$text-font;
+		color: vars.$white;
 	}
 
 	.span-container:hover:after{
@@ -83,14 +86,23 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center !important;
-		
+	}
+
+	.span-container span {
+		display: block;
+		width: 100%;
 	}
 }
 
 /* Tablets & Small Laptops (768px and below) */
 @media (max-width: 768px) {
-	.email-column, .rsvp-btn-column, .calendar-column {
-		
+	.rsvp-row-container {
+		display: flex;
+		flex-direction: column !important;
+		padding: 1rem;
+		.btn-wrapper {
+			width: 100%;
+		}
 	}
 }
 

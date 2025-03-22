@@ -58,13 +58,13 @@ export default function Rsvp() {
 	return (
 		<Container
 			fluid
-			className='rsvp-container min-vh-100 w-75 px-3 pt-3 d-flex flex-column justify-content-between'
+			className='rsvp-container min-vh-100 w-100 w-sm-90 w-md-75 px-2 px-sm-3 pt-2 pt-sm-3 d-flex flex-column justify-content-between'
 			id='rsvp'
 		>
 			<Row className='pt-5'>
 				<h1 className='px-5 text-center'>RSVP</h1>
 			</Row>
-			<Row className='px-md-5'>
+			<Row className='px-5 px-sm-0 d-flex justify-content-center'>
 				<Row>
 					<span className='doodle-span d-flex justify-content-center'>
 						<LayingDoodle />
@@ -103,9 +103,8 @@ export default function Rsvp() {
 						</div>
 					</Col>
 					<Col xs='12' sm='12' md='4' className='calendar-column p-2 p-sm-3 p-md-4 p-lg-5'>
-						<span className='text-end'>
-							<p className='mb-0'>Join us in celebrating!</p>
-							<p>Save the date to your calendar.</p>
+						<span>
+							<p className='mb-3'>Join us in celebrating! Save the date to your calendar.</p>
 						</span>
 
 						<div
