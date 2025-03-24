@@ -23,7 +23,7 @@ body, html {
 	--bs-body-font-size: 22px;
 	--bs-body-line-height: 1.6;
 	--bs-body-font-weight: 400;
-	overflow-x: hidden;
+	// overflow-x: hidden;
 	
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Libre Baskerville", serif, Arial, sans-serif;
@@ -34,6 +34,14 @@ body {
 	margin: 0;
 	display: flex;
 	place-items: center;
-	min-width: 320px;
+	// min-width: 320px;
 	min-height: 100vh;
+}
+
+/* Large Tablets (992px and below) */
+@media (max-width: 992px) {
+	body {
+		--bs-body-line-height: 1.2;
+		--bs-body-font-size: 18px;
+	}
 }
