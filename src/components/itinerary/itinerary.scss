@@ -1,5 +1,15 @@
 @use '../../../src/variables.scss' as vars;
 
-.iti-container {
+.itinerary-container {
 	background-image: url('../../assets/svgs/ring-bg.svg');
+	min-height: 100vh;
+	width: 100%;
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+	.itinerary-container {
+		height: 80vh !important;
+		overflow-y: scroll;
+	}
 }

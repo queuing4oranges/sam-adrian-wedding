@@ -6,7 +6,7 @@ import './travel.scss';
 
 export default function PublicTransport({ setShowMhd }) {
 	return (
-		<CardBody className='border'>
+		<CardBody className='public-transport-card border'>
 			<div className='d-flex justify-content-between'>
 				<h3 className='mb-3'>Prague Public Transport</h3>
 				<span

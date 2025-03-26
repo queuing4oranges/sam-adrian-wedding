@@ -10,7 +10,7 @@ import Travel from './components/travel/Travel';
 import Rsvp from './components/rsvp/Rsvp';
 
 export default function Home() {
-    const location = useLocation();
+	const location = useLocation();
 
 	// Scroll to section based on hash on initial render
 	useEffect(() => {
