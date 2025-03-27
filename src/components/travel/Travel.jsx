@@ -7,8 +7,7 @@ import TravelCottage from './TravelCottage';
 
 export default function Travel() {
 	const [activeSection, setActiveSection] = useState('showPrague');
-	const [showHoods, setShowHoods] = useState(false);
-	const [showMhd, setShowMhd] = useState(false);
+	const [activePragueView, setActivePragueView] = useState(null);
 
 	// Define array of buttons with labels and associated state keys
 	const buttons = [
@@ -19,8 +18,7 @@ export default function Travel() {
 	// Function to handle button
 	const handleClick = (stateKey) => {
 		setActiveSection(stateKey);
-		setShowHoods(false);
-		setShowMhd(false);
+		setActivePragueView(null); // Reset TravelPrague when switching sections
 	}
 
 	return (
@@ -46,10 +44,8 @@ export default function Travel() {
 				<Col md='11'>
 					{(activeSection === 'showPrague')
 						? <TravelPrague
-							showHoods={showHoods}
-							setShowHoods={setShowHoods}
-							showMhd={showMhd}
-							setShowMhd={setShowMhd}
+							activeView={activePragueView}
+                            setActiveView={setActivePragueView}
 						/>
 						: (activeSection === 'showCottage')
 							? <TravelCottage />
