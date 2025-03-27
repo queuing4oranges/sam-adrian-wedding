@@ -1,10 +1,25 @@
 import { CardBody, Row, Col } from 'reactstrap';
 import map from '/assets/images/prague-map.png';
+import Xicon from '../../assets/svgs/Xicon';
 
-export default function PragueMap() {
+export default function PragueMap({ setShowPrague }) {
 	return (
-		<CardBody>
-			<h3>Exploring Prague</h3>
+		<CardBody className='border prague-map-container'>
+			<div className='prague-map-title-container d-flex justify-content-between'>
+				<h3 className='mb-5'>Exploring Prague</h3>
+				<span
+					onClick={() => setShowPrague(false)}
+					className='close-x d-flex justify-content-end pe-0'
+					title='Close'
+				>
+					<Xicon
+						width={30}
+						height={30}
+						color='#164443'
+						className='xicon'
+					/>
+				</span>
+			</div>
 			<Row className='d-flex justify-content-center'>
 				<Col xl='6' className='prague-travel-cardbody'>
 					<p>

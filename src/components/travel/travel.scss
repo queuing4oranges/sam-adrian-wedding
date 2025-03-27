@@ -124,10 +124,17 @@
 	}
 }
 
-
 /* Tablets & Small Laptops (768px and below) */
 @media (max-width: 768px) {
 	.hood-btn {
 		padding: 16px 32px;
+	}
+}
+
+/* Mobile Devices (576px and below) */
+@media (max-width: 576px) {
+	.prague-travel-cardbody {
+		height: 30rem !important;
+		overflow-y: scroll;
 	}
 }
