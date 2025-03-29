@@ -14,9 +14,12 @@ export default function TravelPrague({ activeView, setActiveView }) {
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
-			(entries) =>{
+			(entries, observerInstance) =>{
 				const entry = entries[0];
-				setIsVisible(entry.isIntersecting);
+				if (entry.isIntersecting) {
+					setIsVisible(entry.isIntersecting);
+					observerInstance.disconnect(); // Stop observing after first trigger
+				}
 			},
 			{ threshold: 0.3}
 		);
