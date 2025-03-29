@@ -104,6 +104,32 @@
 	display: none;
 }
 
+.travel-button-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button {
+		height: 30rem;
+		width: 30rem;
+		background-size: cover;
+		background-position: center;
+		color: white;
+		border: none;
+		cursor: pointer;
+
+		&.button-1 {
+			background-image: url('/assets/buttons/exploring.png');
+			opacity: 0.8;
+		}
+
+		&.button-2 {
+			background-image: url('/assets/buttons/neighborhoods.png');
+		}
+	}
+}
+
 /* Large Tablets (992px and below) */
 @media (max-width: 992px) {
 	.hoods-container {

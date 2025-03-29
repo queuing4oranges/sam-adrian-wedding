@@ -1,4 +1,4 @@
-import { Card, Button } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 
 import './travel.scss';
 import Neighborhoods from './Neighborhoods.jsx';
@@ -11,15 +11,29 @@ export default function TravelPrague({ activeView, setActiveView }) {
 	};
 
 	return (
-		<Card className='border-0 p-2 prague-info-card'>
+		<Card className='border-0 p-2 h-100'>
 			{!activeView ? (
-			<div className='mb-3'>
-				<Button onClick={() => setActiveView('prague')}>Exploring Prague</Button>
-				<Button onClick={() => setActiveView('hoods')}>Check out the neighborhoods</Button>
-				<Button onClick={() => setActiveView('transport')}>Public Transport</Button>
-			</div>
+				<CardBody className='travel-button-container'>
+					<button
+						onClick={() => setActiveView('prague')}
+						className='button-1'
+					>
+						Exploring Prague
+					</button>
+					<button
+						onClick={() => setActiveView('hoods')}
+						className='button-2'
+					>
+						Check out the neighborhoods
+					</button>
+					<button
+						onClick={() => setActiveView('transport')}
+						className='button-3'
+					>
+						Public Transport
+					</button>
+				</CardBody>
 			) : null}
-
 			{activeView === 'hoods' && <Neighborhoods setShowHoods={handleCloseView} />}
 			{activeView === 'transport' && <PublicTransport setShowMhd={handleCloseView} />}
 			{activeView === 'prague' && <PragueMap setShowPrague={handleCloseView} />}

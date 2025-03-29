@@ -41,7 +41,7 @@ export default function Travel() {
 						</button>
 					))}
 				</Col>
-				<Col md='11'>
+				<Col md='11' className='h-100'>
 					{(activeSection === 'showPrague')
 						? <TravelPrague
 							activeView={activePragueView}
