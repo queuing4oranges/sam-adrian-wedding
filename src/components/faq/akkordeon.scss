@@ -102,6 +102,10 @@ input:checked + .box .box-close {
 	.box-content {
 		padding: 1rem;
 	}
+
+	.bi-envelope-heart, .bi-envelope-open-heart {
+		font-size: 2rem;
+	}
 }
 
 /* Tablets & Small Laptops (768px and below) */
