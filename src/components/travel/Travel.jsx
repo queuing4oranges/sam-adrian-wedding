@@ -24,7 +24,7 @@ export default function Travel() {
 	return (
 		<Container
 			fluid
-			className='travel-container w-100 min-vh-100 pb-5 px-lg-5 mb-5'
+			className='travel-container w-100 h-100 pb-5 px-lg-5 mb-5'
 		>
 			<Row className='pt-5'>
 				<h1 className='pt-5 px-5 text-center'>Travel and Accomodation</h1>
