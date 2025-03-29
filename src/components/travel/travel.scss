@@ -113,19 +113,59 @@
 	button {
 		height: 30rem;
 		width: 30rem;
-		background-size: cover;
-		background-position: center;
+		background: transparent;
 		color: white;
+		font-size: 3rem;
+		font-weight: 600;
 		border: none;
 		cursor: pointer;
+		border-radius: 0 2rem 0 2rem;
+		margin: 1rem;
+		border: vars.$primary-bg solid 0.5rem;
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
 
-		&.button-1 {
-			background-image: url('/assets/buttons/exploring.png');
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: -1; // Keeps it behind the text & border
+		}
+
+		// Overlay for opacity effect
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5); // Dark semi-transparent overlay
+			z-index: -1;
+		}
+
+		&:hover {
 			opacity: 0.8;
 		}
 
-		&.button-2 {
+		&.button-1::before {
+			background-image: url('/assets/buttons/exploring.png');
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		&.button-2::before {
 			background-image: url('/assets/buttons/neighborhoods.png');
+		}
+
+		&.button-3::before {
+			background-image: url('/assets/buttons/metro.png');
 		}
 	}
 }

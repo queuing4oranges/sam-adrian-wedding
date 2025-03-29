@@ -30,7 +30,7 @@ export default function TravelPrague({ activeView, setActiveView }) {
 						onClick={() => setActiveView('transport')}
 						className='button-3'
 					>
-						Public Transport
+						Prague Public Transport
 					</button>
 				</CardBody>
 			) : null}

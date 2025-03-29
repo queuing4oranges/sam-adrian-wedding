@@ -32,7 +32,7 @@ export default function Neighborhoods({ setShowHoods }) {
 	return (
 		<CardBody className='border hoods-container'>
 			<div className='hoods-title-container d-flex justify-content-between'>
-				<h3 className='hoods-title mb-5'>Get to know the neighborhoods</h3>
+				<h3 className='hoods-title mb-5'>Check out the neighborhoods</h3>
 				<span
 					onClick={() => setShowHoods(false)}
 					className='close-x d-flex justify-content-end pe-0'
