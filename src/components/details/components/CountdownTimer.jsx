@@ -54,6 +54,7 @@ export default function CountdownTimer({ targetDate }) {
 					<p className='number'>{(timeLeft?.hours < 10) ? `0${timeLeft?.hours}` : timeLeft?.hours}</p>
 					<p className='time'>hours</p>
 				</div>
+				<br />
 				<div className='countdown-cube minutes'>
 					<p className='number'>{(timeLeft?.minutes < 10) ? `0${timeLeft?.minutes}` : timeLeft?.minutes}</p>
 					<p className='time'>minutes</p>
