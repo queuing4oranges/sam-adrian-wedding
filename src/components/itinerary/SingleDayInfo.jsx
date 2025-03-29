@@ -11,6 +11,7 @@ import './singledayinfo.scss';
 export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setSelectedDay }) {
 	const [modal, setModal] = useState(false);
 	const [currentDay, setCurrentDay] = useState(null);
+	const [showArrow, setShowArrow] = useState({ left: null, right: null })
 
 	const toggle = () => setModal(!modal);
 
@@ -24,6 +25,14 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 	useEffect(() => {
 		const current = schedule[selectedDay - 1];
 		setCurrentDay(current);
+
+		// Show left arrow only from Day2, show right arrow only up to Day4
+		setShowArrow((prev) => ({
+			...prev,
+			right: selectedDay !== schedule.length,
+			left: selectedDay > 1,
+		}));
+
 	},[selectedDay, schedule]);
 
 	const { day, date, title, description, note, imageUrl, inspirationUrl } = currentDay || {};
@@ -41,16 +50,18 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 			setSelectedDay(selectedDay - 1);
 		}
 	}
-
+console.log(showArrow, 'show arrow')
 	return (
 		<Row className='card-container w-100'>
 			<Col xs={12} lg={6} className='w-100 d-flex flex-column justify-content-center align-items-center'>
 				{!modal ?
 				<div className='d-flex'>
-					<span className='prev-span' onClick={handlePrevDay}>
-						<i className='bi bi-caret-left'/>
-						<span className='me-3'>PREV</span>
-					</span>
+					{showArrow.left &&
+						<span className='prev-span' onClick={handlePrevDay}>
+							<i className='bi bi-caret-left'/>
+							<span className='me-3'>PREV</span>
+						</span>
+					}
 					<Card className='single-day-info-card p-2 p-md-4 p-lg-5'>
 						<span
 							onClick={() => setShowMore(false)}
@@ -81,10 +92,12 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 							}
 						</CardBody>
 					</Card>
-					<span className='next-span' onClick={handleNextDay}>
-						<span className='ms-3'>NEXT</span>
-						<i className='bi bi-caret-right'/>
-					</span>
+					{showArrow.right &&
+						<span className='next-span' onClick={handleNextDay}>
+							<span className='ms-3'>NEXT</span>
+							<i className='bi bi-caret-right'/>
+						</span>
+					}
 					</div>
 				: <FotoModal inspirationUrl={inspirationUrl} toggle={toggle} modal={modal} />
 				}
