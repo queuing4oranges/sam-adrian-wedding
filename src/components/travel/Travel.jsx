@@ -27,9 +27,9 @@ export default function Travel() {
 			className='travel-container w-100 h-100 pb-5 px-lg-5 mb-5'
 		>
 			<Row className='pt-5'>
-				<h1 className='pt-5 px-5 text-center'>Travel and Accomodation</h1>
+				<h1 className='pt-0 pt-md-5 px-5 text-center'>Travel and Accomodation</h1>
 			</Row>
-			<Row className='h-100 pt-5 d-flex justify-content-center'>
+			<Row className='h-100 pt-md-5 d-flex justify-content-center'>
 				<Col xl='1' className='h-100 d-flex flex-row flex-xl-column justify-content-center align-items-center mb-3'>
 					{buttons.map(({label, state}) => (
 						<button

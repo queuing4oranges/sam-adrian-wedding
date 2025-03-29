@@ -32,6 +32,10 @@
 			background-color: vars.$turq-light-light;
 			color: vars.$white;
 		}
+
+		&.inactive-btn {
+			border: 2px solid vars.$turq-light-light;
+		}
 	}
 
 	.prague-hoods {
@@ -110,7 +114,7 @@
 		height: 30rem;
 		width: 30rem;
 		background: transparent;
-		color: white;
+		color: vars.$white;
 		font-size: 3rem;
 		font-weight: 600;
 		border: none;
@@ -196,10 +200,12 @@
 	}
 
 	.travel-button-container button {
-		width: 10rem;
-		height: 10rem;
+		width: 10rem !important;
+		height: 10rem !important;
 		aspect-ratio: 1 1;
-		font-size: 1.2rem;
+		font-size: 1rem !important;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
 }
 
@@ -228,5 +234,10 @@
 	.public-transport-row::-webkit-scrollbar-thumb {
 		background-color: vars.$primary-bg;
 		height: 2rem !important;
+	}
+
+	.round-title {
+		height: 5rem !important;
+		width: 5rem !important;
 	}
 }
