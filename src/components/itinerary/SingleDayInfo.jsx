@@ -12,6 +12,7 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 	const [modal, setModal] = useState(false);
 	const [currentDay, setCurrentDay] = useState(null);
 	const [showArrow, setShowArrow] = useState({ left: null, right: null })
+	const { day, date, title, description, note, imageUrl, inspirationUrl } = currentDay || {};
 
 	const toggle = () => setModal(!modal);
 
@@ -34,8 +35,6 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 		}));
 
 	},[selectedDay, schedule]);
-
-	const { day, date, title, description, note, imageUrl, inspirationUrl } = currentDay || {};
 
 	const handleNextDay = () => {
 		if (selectedDay < schedule.length) {
@@ -60,7 +59,7 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 						<i className='bi bi-caret-left'/>
 						<span className='me-3'>PREV</span>
 					</span>
-					<Card className='single-day-info-card p-2 p-md-4 p-lg-5'>
+					<Card className='single-day-info-card p-2 p-md-4 p-lg-5 position-relative'>
 						<span
 							onClick={() => setShowMore(false)}
 							className='close-x d-flex justify-content-end'
