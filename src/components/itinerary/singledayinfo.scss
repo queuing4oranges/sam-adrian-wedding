@@ -17,14 +17,16 @@
 	font-weight: bolder;
 	font-size: xx-large;
 	cursor: pointer;
-	height: 40rem;
+	height: 45rem;
+	width: 10rem;
 	display: flex;
 	align-items: center;
 }
 
 .single-day-info-card {
-	height: 40rem;
-	width: 60rem;
+	min-height: 45rem;
+	max-height: 45rem;
+	max-width: 60rem;
 
 	h3 {
 		color: vars.$turq-light-light;
@@ -36,10 +38,14 @@
 	font-weight: bolder;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 /* Large Tablets (992px and below) */
 @media (max-width: 992px) {
 	.single-day-info-card {
-		height: unset;
+		min-height: unset;
 		width: unset;
 		padding: 0;
 

@@ -50,18 +50,16 @@ export default function SingleDayInfo({ setShowMore, schedule, selectedDay, setS
 			setSelectedDay(selectedDay - 1);
 		}
 	}
-console.log(showArrow, 'show arrow')
+
 	return (
 		<Row className='card-container w-100'>
 			<Col xs={12} lg={6} className='w-100 d-flex flex-column justify-content-center align-items-center'>
 				{!modal ?
 				<div className='d-flex'>
-					{showArrow.left &&
-						<span className='prev-span' onClick={handlePrevDay}>
-							<i className='bi bi-caret-left'/>
-							<span className='me-3'>PREV</span>
-						</span>
-					}
+					<span className={`prev-span ${!showArrow.left ? 'hidden' : ''}`} onClick={handlePrevDay}>
+						<i className='bi bi-caret-left'/>
+						<span className='me-3'>PREV</span>
+					</span>
 					<Card className='single-day-info-card p-2 p-md-4 p-lg-5'>
 						<span
 							onClick={() => setShowMore(false)}
@@ -92,12 +90,10 @@ console.log(showArrow, 'show arrow')
 							}
 						</CardBody>
 					</Card>
-					{showArrow.right &&
-						<span className='next-span' onClick={handleNextDay}>
+						<span className={`next-span ${!showArrow.right ? 'hidden' : ''}`} onClick={handleNextDay}>
 							<span className='ms-3'>NEXT</span>
 							<i className='bi bi-caret-right'/>
 						</span>
-					}
 					</div>
 				: <FotoModal inspirationUrl={inspirationUrl} toggle={toggle} modal={modal} />
 				}
