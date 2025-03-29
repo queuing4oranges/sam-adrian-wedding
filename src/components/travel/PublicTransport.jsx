@@ -1,4 +1,4 @@
-import { CardBody, Row, Col, Button } from 'reactstrap';
+import { CardBody, Row, Col } from 'reactstrap';
 
 import Xicon from '../../assets/svgs/Xicon';
 
@@ -6,7 +6,7 @@ import './travel.scss';
 
 export default function PublicTransport({ setShowMhd }) {
 	return (
-		<CardBody className='public-transport-card border'>
+		<CardBody className='public-transport-card'>
 			<div className='d-flex justify-content-between'>
 				<h3 className='mb-3'>Prague Public Transport</h3>
 				<span
@@ -22,7 +22,7 @@ export default function PublicTransport({ setShowMhd }) {
 					/>
 				</span>
 			</div>
-			<Row>
+			<Row className='public-transport-row'>
 				<Col md='8' className='p-3'>
 					<p>Prague&apos;s public transport is fairly simple. There are buses, trams and the metro. If you spend the day sightseeing, it is recommended to buy a 24h ticket as it covers the whole city and all means of public transport listed below.</p>
 					<ul className='list-unstyled'>
@@ -51,9 +51,6 @@ export default function PublicTransport({ setShowMhd }) {
 						Unfortunately, overcharging tourists is still a common issue with some Prague taxi drivers. Avoid hailing taxis from the street—use Uber, Bolt etc. If you must take a regular taxi, always ask for the estimated fare in advance and make sure the meter is running.
 					</p>
 				</Col>
-				<div className='transport-btn'>
-					<Button color='info' className='float-end' onClick={() => setShowMhd(false)}>Close</Button>
-				</div>
 			</Row>
 		</CardBody>
 	)

@@ -4,7 +4,7 @@ import Xicon from '../../assets/svgs/Xicon';
 
 export default function PragueMap({ setShowPrague }) {
 	return (
-		<CardBody className='border prague-map-container'>
+		<CardBody className='prague-map-container'>
 			<div className='prague-map-title-container d-flex justify-content-between'>
 				<h3 className='mb-5'>Exploring Prague</h3>
 				<span
@@ -21,7 +21,7 @@ export default function PragueMap({ setShowPrague }) {
 				</span>
 			</div>
 			<Row className='d-flex justify-content-center'>
-				<Col xl='6' className='prague-travel-cardbody'>
+				<Col xl='6' className='prague-map-cardbody'>
 					<p>
 						The map highlights the eight best neighborhoods to stay in Prague, marked with colorful outlines and numbered based on their popularity among tourists. These areas are marked and ranked from 1 (most popular) to 8 (less popular but still worth considering) in blue. The circle in red marks the general area I would recommend if you wish to be centrally located.
 					</p>
@@ -34,7 +34,7 @@ export default function PragueMap({ setShowPrague }) {
 				</Col>
 				<Col xl='6' className='prague-map d-flex flex-column align-items-center'>
 					<div className='mt-2'>
-						<img src={map} alt='Map of Prague' style={{ width: "38rem"}} />
+						<img src={map} alt='Map of Prague' />
 					</div>
 				</Col>
 			</Row>

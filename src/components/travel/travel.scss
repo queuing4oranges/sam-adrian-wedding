@@ -100,10 +100,6 @@
 	}
 }
 
-.transport-btn {
-	display: none;
-}
-
 .travel-button-container {
 	height: 100%;
 	display: flex;
@@ -185,10 +181,6 @@
 		}
 	}
 
-	.transport-btn {
-		display: block;
-	}
-
 	.travel-button-container button {
 		width: 20rem;
 		height: 20rem;
@@ -213,11 +205,6 @@
 
 /* Mobile Devices (576px and below) */
 @media (max-width: 576px) {
-	.prague-travel-cardbody {
-		height: 30rem !important;
-		overflow-y: scroll;
-	}
-
 	.travel-button-container {
 		flex-direction: column;
 		button {
@@ -226,5 +213,20 @@
 			aspect-ratio: 1 1;
 			font-size: 1.5rem;
 		}
+	}
+
+	.public-transport-row {
+		max-height: 80vh;
+		overflow-y: auto;
+	}
+
+	.public-transport-row::-webkit-scrollbar {
+		background-color: vars.$turq-light-light;
+		max-width: 0.5rem;
+	}
+
+	.public-transport-row::-webkit-scrollbar-thumb {
+		background-color: vars.$primary-bg;
+		height: 2rem !important;
 	}
 }
