@@ -88,6 +88,10 @@
 		justify-content: center !important;
 	}
 
+	.btn-wrapper {
+		width: 100%;
+	}
+
 	.span-container span {
 		display: block;
 		width: 100%;
@@ -115,5 +119,8 @@
 
 /* Extra Small Screens (400px and below) */
 @media (max-width: 400px) {
+	.rsvp-container {
+		padding: 0 !important;
+	}
 
 }

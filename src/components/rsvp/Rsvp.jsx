@@ -58,19 +58,19 @@ export default function Rsvp() {
 	return (
 		<Container
 			fluid
-			className='rsvp-container min-vh-100 w-100 w-sm-90 w-md-75 px-2 px-sm-3 pt-2 pt-sm-3 d-flex flex-column justify-content-between'
+			className='rsvp-container min-vh-100 w-100 w-sm-90 w-md-75 px-0 px-sm-3 pt-2 pt-sm-3 d-flex flex-column justify-content-between'
 			id='rsvp'
 		>
 			<Row className='pt-5'>
 				<h1 className='px-5 text-center'>RSVP</h1>
 			</Row>
-			<Row className='px-5 px-sm-0 d-flex justify-content-center'>
-				<Row>
+			<Row className='px-sm-0 d-flex justify-content-center'>
+				<Row className='px-5'>
 					<span className='doodle-span d-flex justify-content-center'>
 						<LayingDoodle />
 					</span>
 				</Row>
-				<Row className='rsvp-row-container'>
+				<Row className='rsvp-row-container px-5'>
 					<Col xs='12' sm='12' md='4' className='email-column p-2 p-sm-3 p-md-4 p-lg-5'>
 						<p>
 							Feel free to contact us if you have additional questions.
