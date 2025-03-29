@@ -1,11 +1,9 @@
 @use '../../../src/variables.scss' as vars;
 
-.card-container {
-	&.grid {
-		display: grid !important;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
-	}
+.card-container-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
 
 	.itinerary-card {
 		width: 20rem;
@@ -62,21 +60,35 @@
 
 /* Large Tablets (992px and below) */
 @media (max-width: 992px) {
-	.card-container {
+	.card-container-grid {
 		padding-top: 2rem;
-		&.grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		padding-bottom: 2rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
 	}
 }
 
 /* Mobile Devices (576px and below) */
 @media (max-width: 576px) {
-	.card-container.grid {
-		grid-template-columns: 1fr;
-	}
+	.itinerary-container {
+		.itinerary-card {
+		height: 12rem;
+		width: 12rem;
+		padding: 0.25rem !important;
 
-	.itinerary-card {
-		height: 17rem !important;
+			h5 {
+				font-size: 1rem;
+			}
+
+			p {
+				font-size: 1rem;
+			}
+
+			.more-info-btn {
+				font-size: 0.5rem;
+				margin-top: 0.5rem !important;
+			}
+		}
 	}
 }

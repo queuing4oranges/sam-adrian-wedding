@@ -1,11 +1,11 @@
-import { Card, CardBody, Row, Button } from 'reactstrap';
+import { Card, CardBody, Button } from 'reactstrap';
 
 import './scheduleinfo.scss';
 
 export default function ScheduleInfo({ setShowMore, schedule, setSelectedDay }) {
 
 	return (
-	<Row className='card-container grid'>
+	<div className='card-container-grid'>
 		{schedule && schedule.map((info) => (
 			<Card
 				title='Click for more info'
@@ -19,7 +19,7 @@ export default function ScheduleInfo({ setShowMore, schedule, setSelectedDay }) 
 				<CardBody className='ps-0'>
 					<p>Day {info.day}</p>
 					<h5 className='fw-bold'>{info.title}</h5>
-					<p className='position-absolute bottom-0 start-0 ps-5'>{info.date}</p>
+					<p className='position-absolute bottom-0 start-0 ps-1 ps-md-4 ps-lg-5'>{info.date}</p>
 					<Button
 						className='more-info-btn position-absolute top-0 end-0 mt-4'
 						onClick={() => {
@@ -34,6 +34,6 @@ export default function ScheduleInfo({ setShowMore, schedule, setSelectedDay }) 
 				</CardBody>
 			</Card>
 		))}
-	</Row>
+	</div>
 	)
 }
