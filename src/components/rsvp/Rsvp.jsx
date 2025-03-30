@@ -1,9 +1,12 @@
-import { Container, Col, Row } from 'reactstrap';
+import { useState } from 'react';
+import { Container, Col, Row, Toast, ToastHeader, ToastBody } from 'reactstrap';
 import LayingDoodle from '../../assets/svgs/LayingDoodle';
 
 import './rsvp.scss';
 
 export default function Rsvp() {
+	const [showMessage, setShowMessage] = useState(false);
+
 	const userAgent = navigator.userAgent.toLowerCase(); // Check which device user is using
 	const handleAddToCalendar = () => {
 		if (/iphone|ipad|mac os/.test(userAgent)) {
@@ -11,7 +14,7 @@ export default function Rsvp() {
 			if (isSafari) {
 				handleAppleCalendar();  // iOS or Mac users
 			} else {
-				alert('Please use Safari to add this event to your calendar.');
+				setShowMessage(true);
 			}
 		} else {
 			handleGoogleCalendar(); // Default to Google Calendar
@@ -106,7 +109,7 @@ export default function Rsvp() {
 							className='btn-wrapper'
 							onClick={() => handleAddToCalendar()}
 						>
-							<span className='span-container'>
+							<span className='span-container bottom'>
 								<span>
 									<i className='pe-2 bi bi-calendar-heart' />
 									Add to calendar
@@ -115,6 +118,16 @@ export default function Rsvp() {
 						</div>
 					</Col>
 				</Row>
+				{showMessage && (
+					<Toast isOpen={showMessage}>
+						<ToastHeader toggle={() => setShowMessage(false)}>
+						Whoopsie!
+						</ToastHeader>
+						<ToastBody>
+						Use Safari to add event to your calendar.
+						</ToastBody>
+					</Toast>
+				)}
 			</Row>
 		</Container>
 	);

@@ -115,6 +115,10 @@
 	.card-container.grid {
 		grid-template-columns: 1fr;
 	}
+
+	.span-container.bottom {
+		margin-bottom: 3rem;
+	}
 }
 
 /* Extra Small Screens (400px and below) */
