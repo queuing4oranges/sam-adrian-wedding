@@ -5,10 +5,14 @@ import './rsvp.scss';
 
 export default function Rsvp() {
 	const userAgent = navigator.userAgent.toLowerCase(); // Check which device user is using
-
 	const handleAddToCalendar = () => {
 		if (/iphone|ipad|mac os/.test(userAgent)) {
-			handleAppleCalendar();  // iOS or Mac users
+			const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+			if (isSafari) {
+				handleAppleCalendar();  // iOS or Mac users
+			} else {
+				alert('Please use Safari to add this event to your calendar.');
+			}
 		} else {
 			handleGoogleCalendar(); // Default to Google Calendar
 		}
@@ -32,27 +36,18 @@ export default function Rsvp() {
 			BEGIN:VCALENDAR
 			VERSION:2.0
 			BEGIN:VEVENT
-			SUMMARY:'Sam and Adrian's Wedding Celebration'
-			DTSTART:'20250908T120000'
-			DTEND:'20250912T120000'
-			LOCATION:'Prague'
+			SUMMARY:Sam and Adrian's Wedding Celebration
+			DTSTART;VALUE=DATE:20250908
+			DTEND;VALUE=DATE:20250913
+			LOCATION:Prague
 			END:VEVENT
 			END:VCALENDAR
 		`);
+    // Encode the .ics content as a data URI
+    const dataUri = `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
 
-		// Create a Blob with the .ics content
-		const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-		const url = window.URL.createObjectURL(blob);
-		const link = document.createElement('a');
-		link.href = url;
-		link.setAttribute('download', 'wedding.ics');
-		document.body.appendChild(link);
-
-		// Trigger a click on the link to start the download
-		link.click();
-
-		// Remove the link from the document
-		document.body.removeChild(link);
+    // Open the data URI to trigger the calendar app
+    window.location.href = dataUri;
 	};
 
 	return (
@@ -90,7 +85,7 @@ export default function Rsvp() {
 						<p className='mb-4'>
 							Please RSVP by <strong>August, 10 </strong>to help us finalize arrangements. <br /> In case you missed it above here, again, the RSVP form.
 						</p>
-						<div className='d-flex justify-content-center pb-5'>
+						<div className='d-flex justify-content-center pb-md-5'>
 							<button className='button-55 rsvp-btn' role='button'>
 								<a
 									href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform'

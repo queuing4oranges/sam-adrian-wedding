@@ -117,7 +117,7 @@ function FotoModal ({ inspirationUrl, toggle, modal }) {
 							key={idx}
 							src={image}
 							alt={`Inspiration photo ${idx +1}`}
-							className='img-fluid m-3'
+							className='img-fluid m-md-3'
 						/>
 					))}
 				</div>
