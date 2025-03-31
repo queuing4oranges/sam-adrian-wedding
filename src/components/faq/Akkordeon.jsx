@@ -21,15 +21,15 @@ export default function Akkordeon() {
 			<input type='checkbox' name='accordion' id='cb2' />
 			<section className='box'>
 				<label className='box-title d-flex justify-content-between' htmlFor='cb2'>
-					<span>How do I sign up for carpooling?</span>
+					<span>How do I sign up to be a carpool driver?</span>
 					<i className='bi bi-envelope-heart' />
 					<i className='bi bi-envelope-open-heart' />
 				</label>
 				<div className='box-content'>
-					<span className='d-flex align-items-center'>
-						<p className='m-0 me-2'>
-							Use our RSVP Form
-						</p>
+					<span className='d-flex flex-column align-items-center'>
+						<span className='m-0 me-2'>
+							Keep in mind this is for those living in the Czech Republic. For those flying in, please do not rent a car as it is not needed. To sign up as a driver, fill out the section in our RSVP form.
+						</span>
 						<button className='button-55 faq-rsvp-btn' role='button'>
 							<a href='https://docs.google.com/forms/d/e/1FAIpQLSeb96PN2yCs9EsAPzcfAT0wC8Y9TrquhyJWD7JDcFU-VWp8bw/viewform' target='_blank' className='text-decoration-none text-dark'>
 								RSVP
